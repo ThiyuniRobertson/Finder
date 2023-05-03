@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link href="css/finder.css" rel="stylesheet">
+    <link href="css/mediaquery.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <title>Electoral Reform Tracker</title>
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <!--favicon-->
+
+    <!-- font awsom -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <!-- font awsom --> 
+
+    <!--loading effect-->
+    <link rel="stylesheet" href="css/loading_styles.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/aos.css" type="text/css" media="screen"/>
+    <!--loading effect-->
+
+    <!--jarallax js & css--> 
+    <link href="jarallax/jarallax_css.css" rel="stylesheet" type="text/css" media="screen">
+    <!--jarallax js & css-->
+
+    <!-- owl carousel -->
+    <link href="owl/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="owl/owl_css.css">
+    <!-- owl carousel -->
+
+
+    <!--scroll bar style-->
+    <style>
+
+      ::-webkit-scrollbar {
+        background: #eeeeee;
+        height: 5px;
+        width: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px #002367;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #002367;
+        border-radius: 2px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #002367; 
+      }
+    </style>
+    <!--scroll bar style-->
+
+
+  </head>
+  <body>
+<!-- login Modal -->
+<div class="modal fade" id="login_popup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        <div class="row m-auto login_pop_row">
+
+          <h1 class="heading mb-1" style="text-transform: uppercase; color: #0468a1;">Login</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+          
+          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">User Name</label>
+              <img src="images/u_name.png" class="form_icon">
+            </div>
+          </div>
+
+         <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+           <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+              <img src="images/pass.png" class="form_icon">
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <p style="text-align: right; font-weight: 700;"><a href="forgot_password.html" class="a_link">Forgot Password?</a></p>
+
+          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+             <a href="index.html"><button type="button" class="btn btn-primary dark_blue_btn" style="width: 100%; font-weight: 900; height: 55px;"><span class="align-middle">LOGIN NOW</span></button></a>
+          </div>
+
+          <div class="clearfix"></div>
+          <br>
+
+          <p style="text-align: center;">
+            You Don’t Have an Account? Please <a href="sign_up.html" class="a_link"><b>Register Here</b></a>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- login Modal -->
+
+
+    <!--=============================================-->
+  <!--===================header====================-->
+
+    <!-- header section -->
+
+
+    <div class="clearfix"></div>
+
+      <div class="container-fluid top_logo_row" style="background-color: #f8f8fa;">
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-xxl-12 col-xl-12 col-lg-12 offset-lg-12 col-md-12 col-sm-12 col-12">
+              
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end top_btn_set_div">
+
+                <a href=""><button type="button" class="btn btn-primary blue_white_btn">සිං</button></a>
+                 <a href=""><button type="button" class="btn btn-primary blue_white_btn">தமி</button></a>
+
+                <!-- ============== -->
+
+                <!-- <button type="button" class="btn btn-primary blue_white_btn">How to Use Tracker</button> -->
+                <a href="sign_up.html"><button type="button" class="btn btn-primary blue_white_btn">Sign Up</button></a>
+                <button type="button" class="btn btn-primary blue_btn" data-bs-toggle="modal" data-bs-target="#login_popup">Login</button>
+              </div>
+
+            </div>
+          </div>
+              
+
+        </div>
+
+      </div>
+
+      <!-- ======================= -->
+
+          <div class="clearfix"></div>
+
+      <div class="container-fluid" style="background-color: #ffffff;">
+
+        <div class="container">
+
+          <div class="row">
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="container-fluid">
+                <a class="navbar-brand p-0" href="index.html">
+                  <img src="images/logo_2.jpg" alt="" class="new_top_logo">
+                  <!-- <h1 class="logo_text">Electoral Reform Tracker</h1>
+                  <p class="logo_text_p">SRI LANKA</p>
+ -->                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mb-2 mb-lg-0" style="margin-left: auto !important;">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="recommendations.html">Recommendation</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="proposal_listing.html">Proposal</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="reforms.html">Reforms</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="cat_recommendations.html">Category 01</a></li>
+                        <li><a class="dropdown-item" href="cat_recommendations.html">Category 02</a></li>
+                        <li><a class="dropdown-item" href="cat_recommendations.html">Category 03</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="submissions.html"><button type="button" class="btn btn-primary spec_btn">SUBMISSIONS</button></a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+              
+
+        </div>
+
+      </div>
+
+
+ <!--      <div class="clearfix"></div>
+      <br>
+ -->
+
+    <!-- header section -->
+
+    <!--=============================================-->
+  <!--===================header====================-->
+
+
+  <!--=============================================-->
+  <!--===================body====================-->
+
+<!-- recommendation section -->
+
+    <div class="container-fluid" style="text-align: center;">
+      
+      <div class="container">
+
+        <div class="clearfix"></div>
+        <br>
+
+        <img src="images/thank.gif" alt="" class="mx-auto d-block" style="width: 300px;">
+
+         <h1 class="heading mb-3" style="text-transform: uppercase; color: #0468a1;">your registration is successfully</h1>
+        
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- recommendation section -->
+
+    <!--=============================================-->
+  <!--===================body====================-->
+
+    <div class="clearfix"></div>
+    <br>
+
+  <!--=============================================-->
+  <!--===================footer====================-->
+
+  <div class="container-fluid footer_row">
+      
+      <div class="container">
+        
+        <div class="row m-auto">
+
+          <!-- mobile contact us section -->
+
+          <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none">
+            
+            <div class="shadow p-4 mb-4 bg-body rounded contact_form_div" style="background-color: #8781bd !important;" data-aos="fade-up">
+              
+              <div class="row m-auto">
+                <h1 class="heading"  style="text-transform: uppercase; color: #ffffff;">Quick Contact</h1>
+                <p style="color: #ffffff;">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                </p>
+              </div>
+
+              <div class="clearfix"></div>
+              
+
+              <div class="row m-auto">
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+
+                  <div class="row">
+                  
+                     <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                       <select class="form-select mb-2" aria-label="Default select example">
+                        <option selected="">Mr.</option>
+                        <option value="1">Mrs.</option>
+                        <option value="2">Miss.</option>
+                        <option value="3">Rev.</option>
+                      </select>
+                     </div>
+
+                     <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+                        <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="First Name">
+                     </div>
+
+                   </div>
+
+                 </div>
+
+                 <!-- =============== -->
+
+                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="Last Name">
+                  </div>
+
+                 <div class="clearfix"></div>
+
+                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="Telephone Number">
+                  </div>
+
+                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                   <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="Email Address">
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                    <!-- =============== -->
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="Subject">
+                  </div>
+
+                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                   <input class="form-control mb-2" type="file" id="formFile">
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                    <!-- =============== -->
+
+                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Your Message" style="height: auto;"></textarea>
+                  </div>
+
+                 <div class="clearfix"></div>
+
+                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <button type="submit" class="btn btn-primary dark_blue_btn" style="width: auto; height: 40px;">SEND NOW</button>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- mobile contact us section -->
+          
+          <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+
+            <br class="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+            <br>
+
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-4">
+              <img src="images/logo.png" alt="" class="top_logo">
+              <h1 class="logo_text" style="color: #ffffff;">Electoral Reform Tracker</h1>
+              <p class="logo_text_p" style="color: #ffffff;">SRI LANKA</p>
+            </div>
+
+            <div class="clearfix"></div>
+            
+            <p style="color: #ffffff;">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            </p>
+
+            <div class="clearfix"></div>
+
+
+            <p style="color: #ffffff;">
+              <b>Visit Us</b><br>
+              PEOPLE’S ACTION FOR FREE AND FAIR ELECTIONS (PAFFREL)<br>
+              No.16, Byrde Place,Off Pamankada Rd,<br>
+              Colombo 00600.<br>
+            </p>
+
+            <p style="color: #ffffff;">
+              <b>Call Us</b><br>
+              Tel: <a href="tel:+94 11 2558570">+94 11 2558570/71</a> Fax: +94 11 2558572 
+            </p>
+
+            <div class="row">
+
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">
+               <p style="color: #ffffff;">
+                  <b>Write to Us</b><br>
+                  Email: paffrel@sltnet.lk<br>
+                </p>
+              </div>
+              
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 footer_follow_sec" data-aos="fade-up">
+                <p class="mb-1" style="color: #ffffff;"><b>Follow Us On</b></p>
+               <a href=""><img src="images/facebook.png" class="align-middle image_zoom" alt="" width="30px;" align="middle"> </a> 
+               <a href=""><img src="images/twitter.png" class="align-middle image_zoom" alt="" width="30px;" align="middle"> </a> 
+               <a href=""><img src="images/whatsapp.png" class="align-middle image_zoom" alt="" width="30px;" align="middle"> </a> 
+              </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <p style="color: #fffff; line-height: initial;">
+              <small>          
+                <a href="terms.html" target="_blank" style="color: #ffffff;"><b>Terms and Conditions</b></a>
+              </small>
+            </p>
+
+
+            <p style="color: #eeeeee; line-height: initial;">
+              <small>
+                Copyright © 2022 Paffrel All Rights Reserved.<br>           
+                Solution by <a href="https://www.tekgeeks.net/" target="_blank" style="color: #eeeeee;">TekGeeks</a>
+              </small>
+            </p>
+
+            <br>
+
+          </div>
+
+          <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 d-none d-sm-none d-md-block d-lg-block d-xl-block d-xxl-block">
+            
+            <div class="shadow p-4 mb-4 bg-body rounded contact_form_div" style="background-color: #8781bd !important;" data-aos="fade-up">
+              
+              <div class="row m-auto">
+                <h1 class="heading"  style="text-transform: uppercase; color: #ffffff;">Quick Contact</h1>
+                <p style="color: #ffffff;">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                </p>
+              </div>
+
+              <div class="clearfix"></div>
+              
+
+              <div class="row m-auto">
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+
+                  <div class="row">
+                  
+                     <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                       <select class="form-select mb-2" aria-label="Default select example">
+                        <option selected="">Mr.</option>
+                        <option value="1">Mrs.</option>
+                        <option value="2">Miss.</option>
+                        <option value="3">Rev.</option>
+                      </select>
+                     </div>
+
+                     <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+                        <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="First Name">
+                     </div>
+
+                   </div>
+
+                 </div>
+
+                 <!-- =============== -->
+
+                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="Last Name">
+                  </div>
+
+                 <div class="clearfix"></div>
+
+                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="Telephone Number">
+                  </div>
+
+                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                   <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="Email Address">
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                    <!-- =============== -->
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="Subject">
+                  </div>
+
+                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                   <input class="form-control mb-2" type="file" id="formFile">
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                    <!-- =============== -->
+
+                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Your Message" style="height: auto;"></textarea>
+                  </div>
+
+                 <div class="clearfix"></div>
+
+                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <button type="submit" class="btn btn-primary dark_blue_btn" style="width: auto; height: 40px;">SEND NOW</button>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+  </div>
+
+
+  <!--=============================================-->
+  <!--===================footer====================-->
+
+    <div class="clearfix"></div>
+    <br>
+    <br>
+
+  <!--=============================================-->
+  <!--===================scroll top====================-->
+
+  <button class="scroll-top">
+    <div class="arrow up"></div>
+  </button>
+
+  <!--=============================================-->
+  <!--===================scroll top====================-->
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+      <script src="js/popper.min.js" ></script> 
+      <script src="js/bootstrap.min.js" ></script>
+
+
+      <!-- scroll top -->
+      <script src="js/drop_down_menu.js"></script>
+      <!-- scroll top -->
+
+      <script type="text/javascript">
+        $(document).ready(function() {      
+            $('.carousel').carousel('pause');
+        });
+      </script>
+
+    <!--loading effects-->
+    <script src="js/aos.js"></script>
+
+    <script>
+    AOS.init({
+    easing: 'ease-out-back',
+            duration: 1000
+    });</script>
+
+    <!--loading effects-->
+
+
+      <!-- count down -->
+    <script>
+      var a = 0;
+      $(window).scroll(function() {
+
+        var oTop = $('#counter').offset().top - window.innerHeight;
+        if (a == 0 && $(window).scrollTop() > oTop) {
+          $('.counter-value').each(function() {
+            var $this = $(this),
+              countTo = $this.attr('data-count');
+            $({
+              countNum: $this.text()
+            }).animate({
+                countNum: countTo
+              },
+
+              {
+                duration: 3000,
+                easing: 'swing',
+                step: function() {
+                  $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                  $this.text(this.countNum);
+                  //alert('finished');
+                }
+
+              });
+          });
+          a = 1;
+        }
+
+      });
+    </script>
+    <!-- count down -->
+
+     <!--jarallax js-->
+    <script src="jarallax/jarallax_js.js"></script>
+    <!--jarallax js-->
+
+    <!--jarallax-->
+    <script type="text/javascript">
+        /* init Jarallax */
+        $('.jarallax').jarallax({
+            speed: 0.5,
+            imgWidth: 1366,
+            imgHeight: 768
+        })
+    </script>
+    <!--jarallax-->
+
+     <!-- owl carousel -->
+    <script src="owl/owl.carousel.min.js"></script>
+    <script src="owl/owl_js.js"></script>
+    <!-- owl carousel -->
+
+
+  </body>
+</html>
