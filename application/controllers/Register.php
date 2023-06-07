@@ -45,13 +45,13 @@ class Register extends CI_Controller {
         // if($this->input->post('butregister')){
             
             //Setting values for tabel columns
-            $data['first_name'] = $this->input->post('fname');
-            $data['last_name' ]= $this->input->post('lname');
-            $data['email'] = $this->input->post('email');
-            $data['contact_num'] = $this->input->post('telnum');
-            $data['province'] = $this->input->post('province');
-            $data['district'] = $this->input->post('district');
-            $data['password'] = $this->input->post('password');
+            $data['vFname'] = $this->input->post('fname');
+            $data['vLname	' ]= $this->input->post('lname');
+            $data['vEmail'] = $this->input->post('email');
+            $data['vContactNum'] = $this->input->post('telnum');
+            $data['vProvince'] = $this->input->post('province');
+            $data['vDistrict'] = $this->input->post('district');
+            $data['vPassword'] = $this->input->post('password');
             // var_dump($data);exit();
             $response = $this->register_model->save_register_inquiry($data);
 

@@ -82,7 +82,7 @@
             <div class="shadow p-5 mb-1" data-aos="fade-down" style="background-color: #ffffff;">
 
               <div class="col" data-aos="fade-up" style="padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #f5c481;">
-                <img src="<?php echo base_url('assets\images/logo.png'); ?>" alt="" class="d-block top_logo">
+              <a href="<?php echo base_url('/'); ?>"><img src="<?php echo base_url('assets\images/logo.png'); ?>" alt="" class="d-block top_logo"></a>
               </div>
 
               <div class="clearfix"></div>

@@ -86,7 +86,7 @@
             <div class="shadow p-5 mb-1 bg-body rounded" data-aos="fade-down">
 
               <div class="col"data-aos="fade-up" style="padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #f5c481;">
-                <img src="assets\images/logo.png" alt="" class="d-block top_logo">
+              <a href="<?php echo base_url('/'); ?>"><img src="assets\images/logo.png" alt="" class="d-block top_logo"></a>
               </div>
 
               <div class="clearfix"></div>
@@ -94,12 +94,15 @@
 
               <h1 class="heading mb-2"><b>FORGOT PASSWORD</b></h1>
               <p>Please enter your registered email address. An email notification with a password reset code will then be sent to you.</p>
-
+            
+            <!--Login Form-->  
+            <form name="sign_up" id="sign_up" action="<?php echo base_url('Forgot_password/forgotpass'); ?>" method="post" enctype="multipart/form-data"> 
+               
               <div class="row">
                 
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="floatingInput" name="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput">Your Email Address</label>
                   </div>
 
@@ -115,8 +118,9 @@
                 </div>
 
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                   <a href="index.html"><button type="button" class="btn btn-primary green_btn" style="width: 100%; font-weight: 900; height: 55px !important;"><span class="align-middle">RESET PASSWORD</span></button></a>
+                   <a href="index.html"><button type="submit" class="btn btn-primary green_btn" style="width: 100%; font-weight: 900; height: 55px !important;"><span class="align-middle">RESET PASSWORD</span></button></a>
                 </div>
+            </form>
 
                  <p style="text-align: center; font-weight: 700; margin-top: 15px;"><a href="<?php echo base_url('home'); ?>" class="a_link">Back to Home</a></p>
 

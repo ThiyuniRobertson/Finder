@@ -82,7 +82,7 @@
             <div class="shadow p-5 mb-1" data-aos="fade-down" style="background-color: #ffffff;">
 
               <div class="col" data-aos="fade-up" style="padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #f5c481;">
-                <img src="assets\images/logo.png" alt="" class="d-block top_logo">
+              <a href="<?php echo base_url('/'); ?>"><img src="assets\images/logo.png" alt="" class="d-block top_logo"></a>
               </div>
 
               <div class="clearfix"></div>
@@ -95,22 +95,24 @@
 
               <h1 class="heading mb-2"><b>LOGIN</b></h1>
 
-             
+            <!--Login Form-->  
+            <form name="sign_up" id="sign_up" action="<?php echo base_url('sign_up/login_user'); ?>" method="post" enctype="multipart/form-data"> 
+               
               <div class="row">
 
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" id="username" name="username" class="form-control"  placeholder="name@example.com">
                     <label for="floatingInput">User Name</label>
-                    <img src="assets\images/u_name.png" class="form_icon">
+                    <img src="assets/images/u_name.png" class="form_icon">
                   </div>
                 </div>
 
                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="floatingPassword" name="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
-                    <img src="assets\images/pass.png" class="form_icon">
+                    <img src="assets/images/pass.png" class="form_icon">
                   </div>
                 </div>
 
@@ -119,7 +121,7 @@
                 <p style="text-align: right; font-weight: 700;"><a href="<?php echo base_url('forgot-password'); ?>" class="a_link">Forgot Password?</a></p>
 
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                   <a href="<?php echo base_url('home'); ?>"><button type="button" class="btn btn-primary green_btn" style="width: 100%; font-weight: 900; height: 55px;"><span class="align-middle">LOGIN NOW</span></button></a>
+                   <button type="submit" id="butsign" name="butsign" class="btn btn-primary green_btn" style="width: 100%; font-weight: 900; height: 55px;"><span class="align-middle">LOGIN NOW</span></button>
                 </div>
 
                 <div class="clearfix"></div>
@@ -132,7 +134,7 @@
                  <p class="mb-0" style="text-align: center; font-weight: 500; color: #999999;">Copyright © 2023 FINDER All Rights Reserved. <br>Solution by Thiyuni Siyathma Robertson</p>
 
               </div>
-
+            </form>
 
             </div>
 
