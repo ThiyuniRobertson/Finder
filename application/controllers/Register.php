@@ -56,7 +56,7 @@ class Register extends CI_Controller {
             $response = $this->register_model->save_register_inquiry($data);
 
             if($response==true){
-                redirect(base_url() .'Sign_up');
+                redirect(base_url() .'Thank_you');
                 //echo "Records Saved Successfully";
                 
             }

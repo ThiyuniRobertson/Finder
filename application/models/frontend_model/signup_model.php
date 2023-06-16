@@ -10,6 +10,7 @@ class signup_model extends CI_Model {
         $this->db->from('tbl_register');
         $this->db->where('vEmail',$username);
         $this->db->where('vPassword',$password);
+        
         $query = $this->db->get();
         if ($query->num_rows() == 1) {
             return $query->row();

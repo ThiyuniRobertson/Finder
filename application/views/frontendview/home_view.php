@@ -1,42 +1,5 @@
 <!--===================body====================-->
 
-<div class="container-fluid header_top_div" style="background-image:url('assets/images/body_bg.jpg') !important;">
-
-<div class="container">
-
-    <div class="row m-auto">
-
-      <!-- ===================== -->
-
-      <!-- welcome section -->
-
-      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-
-       <div class="col" data-aos="fade-up" style="padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #f5c481;">
-          <a href="<?php echo base_url('/'); ?>"> <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="" class="d-block top_logo"> </a>
-        </div> <!--when give the / loard the index page-->
-        
-        <div class="clearfix"></div>
-
-         <p data-aos="fade-down">
-           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-         </p>
-
-         <a href=""><button type="button" class="btn btn-primary magenta_btn mb-3"><img src="<?php echo base_url('assets/images/post.png'); ?>" alt="" width="30px;"> &nbsp; POST YOUR ADD</button></a>
-
-         <div class="clearfix"></div>
-
-      </div>
-
-       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
-
-       <img src="<?php echo base_url('assets/images/find.png'); ?>" alt="" class="img-fluid mx-auto d-block">
-
-      </div>
-
-      <!-- welcome section -->
-
-      <!-- ========================== -->
 
       <!-- search section -->
 
@@ -117,9 +80,10 @@
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
                 <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                  <option selected>Brackfast</option>
-                  <option value="1">Luunch</option>
-                  <option value="2">Dinner</option>
+                  <option selected></option>
+                  <option value="1">Brackfast</option>
+                  <option value="2">Luunch</option>
+                  <option value="3">Dinner</option>
                 </select>
                 <label for="floatingSelectGrid">Meal Type</label>
               </div>
@@ -193,7 +157,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
       </p>
       <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
      </div> 
 
    </div>
@@ -221,7 +185,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
       </p>
       <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
      </div> 
    </div>
   <!-- add -->
@@ -256,7 +220,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
       </p>
       <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
      </div> 
 
    </div>
@@ -284,7 +248,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
       </p>
       <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
      </div> 
    </div>
   <!-- add -->
@@ -311,7 +275,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
       </p>
       <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
      </div> 
    </div>
   <!-- add -->
@@ -346,7 +310,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
       </p>
       <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
      </div>
 
    </div>
@@ -382,7 +346,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
       </p>
       <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
      </div> 
 
    </div>
@@ -410,7 +374,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
       </p>
       <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
      </div> 
    </div>
   <!-- add -->
