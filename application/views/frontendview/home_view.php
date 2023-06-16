@@ -2,7 +2,9 @@
 
 
       <!-- search section -->
-
+  <div class="container">
+    
+    <div class="row m-auto">
       <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 slider_search_col home_search_col">
 
 
@@ -101,6 +103,8 @@
         <br class="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
 
       </div>
+    </div>
+  </div>
 
       <!-- search section -->
 
@@ -459,7 +463,7 @@
                         <h1 class="sub_heading mb-1" style="font-size: 16px;">Rooms to rent in kurunegala Lake round - Ladies only</h1>
                         <p class="mb-3" style="color: #000000;">Beds: 2, Baths: 1</p>
                         <h1 class="heading mb-1" data-aos="fade-up" style="font-size: 20px;">Rs 15,000.00 / Month</h1>
-                        <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>" style="display: inherit ;width: 10px !important;"></a>
+                        <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>" style="display: inherit ;width: 10px !important;"></a>
                       </div> 
 
                     </div>
@@ -474,7 +478,7 @@
                         <h1 class="sub_heading mb-1" style="font-size: 16px;">Rooms to rent in kurunegala Lake round - Ladies only</h1>
                         <p class="mb-3" style="color: #000000;">Beds: 2, Baths: 1</p>
                         <h1 class="heading mb-1" data-aos="fade-up" style="font-size: 20px;">Rs 15,000.00 / Month</h1>
-                        <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>" style="display: inherit ;width: 10px !important;"></a>
+                        <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>" style="display: inherit ;width: 10px !important;"></a>
                       </div> 
 
                     </div>
@@ -489,7 +493,7 @@
                         <h1 class="sub_heading mb-1" style="font-size: 16px;">Rooms to rent in kurunegala Lake round - Ladies only</h1>
                         <p class="mb-3" style="color: #000000;">Beds: 2, Baths: 1</p>
                         <h1 class="heading mb-1" data-aos="fade-up" style="font-size: 20px;">Rs 15,000.00 / Month</h1>
-                        <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>" style="display: inherit ;width: 10px !important;"></a>
+                        <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>" style="display: inherit ;width: 10px !important;"></a>
                       </div> 
 
                     </div>
@@ -504,7 +508,7 @@
                         <h1 class="sub_heading mb-1" style="font-size: 16px;">Rooms to rent in kurunegala Lake round - Ladies only</h1>
                         <p class="mb-3" style="color: #000000;">Beds: 2, Baths: 1</p>
                         <h1 class="heading mb-1" data-aos="fade-up" style="font-size: 20px;">Rs 15,000.00 / Month</h1>
-                        <a href="add_detail.html" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>" style="display: inherit ;width: 10px !important;"></a>
+                        <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>" style="display: inherit ;width: 10px !important;"></a>
                      </div> 
 
                     </div>
