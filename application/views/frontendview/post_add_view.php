@@ -19,16 +19,17 @@
               
                 <h1 class="heading mb-4" data-aos="fade-up">Post your advertisement</h1>
 
-      <!--------Post your Add Form----------------------->
-                <form class="row" name="post_add" id="post_add" action="<?php echo base_url('Posted_add/save_inquiry'); ?>" method="post" enctype="multipart/form-data">
+      <!--=======================================================-->
+      <!--------Post your Add Form-------------------------------------------------->
+                <form class="row" name="post_add" id="post_add" action="<?php echo base_url('Post_add/save_inquiry'); ?>" method="post" enctype="multipart/form-data">
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     
                     <div class="form-floating mb-3" data-aos="fade-up">
                       <select class="form-select" id="rtype" name="rtype" aria-label="Floating label select example">
                         <option selected> </option>
-                        <option value="1">Non-AC</option>
-                        <option value="2">AC</option>
+                        <option value="Non-AC">Non-AC</option>
+                        <option value="AC">AC</option>
                       </select>
                       <label for="floatingSelectGrid">Room Type</label>
                     </div>
@@ -40,10 +41,10 @@
                     <div class="form-floating mb-3" data-aos="fade-up">
                       <select class="form-select" id="rcategory" name="rcategory" aria-label="Floating label select example">
                         <option selected> </option>
-                        <option value="1">One Person</option>
-                        <option value="2">Two Person</option>
-                        <option value="3">Three Person</option>
-                        <option value="4">Four / More</option>
+                        <option value="One Person">One Person</option>
+                        <option value="Two Person">Two Person</option>
+                        <option value="Three Person">Three Person</option>
+                        <option value="More than three">More than three</option>
                       </select>
                       <label for="floatingSelectGrid">Room Category</label>
                     </div>
@@ -53,9 +54,9 @@
                     <div class="form-floating mb-3" data-aos="fade-up">
                       <select class="form-select" id="bedtype" name="bedtype" aria-label="Floating label select example">
                         <option selected> </option>
-                        <option value="1">Signle</option>
-                        <option value="2">Double</option>
-                        <option value="3">Bank Bed</option>
+                        <option value="Signle">Signle</option>
+                        <option value="Double">Double</option>
+                        <option value="Bunk Bed">Bunk Bed</option>
                       </select>
                       <label for="floatingSelectGrid">Provide Bed Type</label>
                     </div>
@@ -65,8 +66,8 @@
                     <div class="form-floating mb-3" data-aos="fade-up">
                       <select class="form-select" id="meal" name="meal" aria-label="Floating label select example">
                         <option selected> </option>
-                        <option value="1">With Meal</option>
-                        <option value="2">Without Meal</option>
+                        <option value="With Meal">With Meal</option>
+                        <option value="Without Meal">Without Meal</option>
                       </select>
                       <label for="floatingSelectGrid">Meal</label>
                     </div>
@@ -76,19 +77,19 @@
                     <div class="form-floating mb-3" data-aos="fade-up">
                       <select class="form-select" id="bathroom" name="bathroom" aria-label="Floating label select example">
                         <option selected> </option>
-                        <option value="1">Attached Bathroom</option>
-                        <option value="2">Seperate Bathroom</option>
+                        <option value="Attached Bathroom">Attached Bathroom</option>
+                        <option value="Common Bathroom">Common Bathroom</option>
                       </select>
                       <label for="floatingSelectGrid">Bathroom Type</label>
                     </div>
                   </div>
 
-                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <!--<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-floating mb-3" data-aos="fade-up">
                       <input type="text" class="form-control" id="location" name="location" placeholder="Enter a location">
                       <label for="floatingInput">Your Location</label>
                     </div>
-                  </div>
+                  </div>-->
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-floating mb-3" data-aos="fade-up">
@@ -100,8 +101,8 @@
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                       <div class="mb-3" style="position: relative; top: -6px;" data-aos="fade-up">
-                          <label><small>Upload Images</small></label>
-                          <input class="form-control" type="file" name="rimages" id="rimages" value="front_img" onkeyup="checkemptyFile()">
+                        <label><small>Upload Images</small></label>
+                        <input type="file" name="fimage[]" id="fimage" value="front_img" onkeyup="checkemptyFile()" multiple> 
                       </div>
                   </div>
 
@@ -117,7 +118,7 @@
                   </div>
 
                 </form>
-              <!--------Post your Add Form----------------------->
+          <!-------------------Post your Add Form----------------------->
             </div>
 
           </div>

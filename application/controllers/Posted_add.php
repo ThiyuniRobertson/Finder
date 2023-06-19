@@ -21,28 +21,5 @@ class Posted_add extends CI_Controller {
 		$this->load->view('frontendview/footer_view');
 		
     }
-
-    public function save_inquiry() {
-            
-        //Setting values for tabel columns
-        $data['vRtype'] = $this->input->post('rtype');
-        $data['vRcategory' ]= $this->input->post('rcategory');
-        $data['vBedType'] = $this->input->post('bedtype');
-        $data['vMeal'] = $this->input->post('meal');
-        $data['vBathroom'] = $this->input->post('bathroom');
-        $data['vLocation'] = $this->input->post('location');
-        //$data['fLatitude'] = $this->input->post('latitude');
-        //$data['fLongitude'] = $this->input->post('longitude');
-        $data['vPayment	'] = $this->input->post('payment');
-        $data['vImages'] = $this->input->post('rimages');
-        $data['vFacility'] = $this->input->post('facility');
-
-        // Save the location to the database
-        $this->load->model('frontend_model/posted_add_model');
-        $this->posted_add_model->saveLocation($data);
-    
-
-    }     
-	 
 }
 ?>

@@ -17,36 +17,19 @@ class Register extends CI_Controller {
     }
 
     public function index() {
-            // echo "1"; die();
-        //$this->load->model('frontend_model/contact_model');
-
-        //$data["contact_us"] = $this->contact_model->load_contact_details();
-                
-		//$this->load->view('frontendview/header_view');
+        // echo "1"; die();
+        
 		$this->load->view('frontendview/register_view');
-		//$this->load->view('frontendview/footer_view');
 		
     }
 
         //save the register data 
 
     public function save_inquiry() {
-        
-        //$this->form_validation->set_rules('fname', 'First Name', 'required');
-        //$this->form_validation->set_rules('lname', 'Last Name', 'required');
-        //$this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
-        //$this->form_validation->set_rules('telnum', 'Contact Number', 'required|regex_match[/^[0-9]{10}$/]');
-        //$this->form_validation->set_rules('password', 'Password', 'required');
-                
-        //load registration view form
-        // $this->load->view('frontendview/register_view');
-        
-        //check submit button
-        // if($this->input->post('butregister')){
             
             //Setting values for tabel columns
             $data['vFname'] = $this->input->post('fname');
-            $data['vLname	' ]= $this->input->post('lname');
+            $data['vLname']= $this->input->post('lname');
             $data['vEmail'] = $this->input->post('email');
             $data['vContactNum'] = $this->input->post('telnum');
             $data['vProvince'] = $this->input->post('province');
@@ -61,7 +44,7 @@ class Register extends CI_Controller {
                 
             }
             else{
-                    echo "Insert error !";
+                echo "Insert error !";
             }
             
         // }
