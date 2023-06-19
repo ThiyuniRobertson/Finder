@@ -1,11 +1,4 @@
-            <!-- ========================== -->
-
-            </div>
-
-</div>
-
-</div>
-
+<!-- ========================== -->
 
 <div class="clearfix"></div>
 <br>
@@ -31,7 +24,7 @@
 
   <!-- ============== -->
 
-  <a href="post_add.html">
+  <a href="<?php echo base_url('post-add'); ?>">
     <div class="left_side_btn_div">
       Post your Advertisement
     </div>
@@ -39,7 +32,7 @@
 
   <!-- ============== -->
 
-  <a href="posted_add.html">
+  <a href="<?php echo base_url('posted-add'); ?>">
     <div class="left_side_btn_div">
       Posted your Advertisement
     </div>
@@ -47,7 +40,7 @@
 
   <!-- ============== -->
 
-   <a href="">
+   <a href="<?php echo base_url('my-fav'); ?>">
     <div class="left_side_btn_div">
       My Favorite
     </div>
@@ -55,7 +48,7 @@
 
   <!-- ============== -->
 
-  <a href="my_account.html">
+  <a href="<?php echo base_url('my-account'); ?>">
     <div class="left_side_btn_div left_side_btn_div_active">
       My Account
     </div>
@@ -63,7 +56,7 @@
 
   <!-- ============== -->
 
-  <a href="register.html">
+  <a href="<?php echo base_url('register'); ?>">
     <div class="left_side_btn_div">
       Register
     </div>
@@ -71,7 +64,7 @@
 
   <!-- ============== -->
 
-  <a href="forgot_password.html">
+  <a href="<?php echo base_url('forgot-password'); ?>">
     <div class="left_side_btn_div">
       Forgotten Password
     </div>
@@ -112,14 +105,7 @@
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
         <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="Koswatta, Nawala, Sri Lanka.">
-        <label for="floatingInputValue">Street Address 01</label>
-      </div>
-    </div>
-
-    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
-      <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="Koswatta, Nawala, Sri Lanka.">
-        <label for="floatingInputValue">Street Address 02</label>
+        <label for="floatingInputValue">Address</label>
       </div>
     </div>
 
@@ -153,22 +139,8 @@
 
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="+94 775 235 986">
-        <label for="floatingInputValue">Office Phone Numner</label>
-      </div>
-    </div>
-
-    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
-      <div class="form-floating">
         <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="sanjeewa@testing.com">
         <label for="floatingInputValue">Email</label>
-      </div>
-    </div>
-
-    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
-      <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="36000">
-        <label for="floatingInputValue">Postal Code</label>
       </div>
     </div>
 
@@ -258,11 +230,11 @@
 <div class="row">
 
 <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
-  <div class="banner_div shadow rounded" style="background-image:url('images/banner01.jpg') !important;"></div>
+  <div class="banner_div shadow rounded" style="background-image:url('assets/images/banner01.jpg') !important;"></div>
 </div>
 
 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
-  <div class="banner_div shadow rounded" style="background-image:url('images/banner02.jpg') !important;"></div>
+  <div class="banner_div shadow rounded" style="background-image:url('assets/images/banner02.jpg') !important;"></div>
 </div>
 
 </div>

@@ -19,117 +19,105 @@
               
                 <h1 class="heading mb-4" data-aos="fade-up">Post your advertisement</h1>
 
-                <form class="row">
+      <!--------Post your Add Form----------------------->
+                <form class="row" name="post_add" id="post_add" action="<?php echo base_url('Posted_add/save_inquiry'); ?>" method="post" enctype="multipart/form-data">
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    
                     <div class="form-floating mb-3" data-aos="fade-up">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                        <option selected>Colombo</option>
-                        <option value="1">Kandy</option>
-                        <option value="2">Galle</option>
-                        <option value="3">Matale</option>
+                      <select class="form-select" id="rtype" name="rtype" aria-label="Floating label select example">
+                        <option selected> </option>
+                        <option value="1">Non-AC</option>
+                        <option value="2">AC</option>
                       </select>
                       <label for="floatingSelectGrid">Room Type</label>
                     </div>
                   </div>
 
-                  <div class="clearfix"></div>
+                  <!--<div class="clearfix"></div>-->
                   
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-floating mb-3" data-aos="fade-up">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                        <option selected>Colombo</option>
-                        <option value="1">Kandy</option>
-                        <option value="2">Galle</option>
-                        <option value="3">Matale</option>
+                      <select class="form-select" id="rcategory" name="rcategory" aria-label="Floating label select example">
+                        <option selected> </option>
+                        <option value="1">One Person</option>
+                        <option value="2">Two Person</option>
+                        <option value="3">Three Person</option>
+                        <option value="4">Four / More</option>
                       </select>
-                      <label for="floatingSelectGrid">District</label>
+                      <label for="floatingSelectGrid">Room Category</label>
                     </div>
                   </div>
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-floating mb-3" data-aos="fade-up">
-                      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                      <select class="form-select" id="bedtype" name="bedtype" aria-label="Floating label select example">
+                        <option selected> </option>
+                        <option value="1">Signle</option>
+                        <option value="2">Double</option>
+                        <option value="3">Bank Bed</option>
+                      </select>
+                      <label for="floatingSelectGrid">Provide Bed Type</label>
+                    </div>
+                  </div>
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-floating mb-3" data-aos="fade-up">
+                      <select class="form-select" id="meal" name="meal" aria-label="Floating label select example">
+                        <option selected> </option>
+                        <option value="1">With Meal</option>
+                        <option value="2">Without Meal</option>
+                      </select>
+                      <label for="floatingSelectGrid">Meal</label>
+                    </div>
+                  </div>
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-floating mb-3" data-aos="fade-up">
+                      <select class="form-select" id="bathroom" name="bathroom" aria-label="Floating label select example">
+                        <option selected> </option>
+                        <option value="1">Attached Bathroom</option>
+                        <option value="2">Seperate Bathroom</option>
+                      </select>
+                      <label for="floatingSelectGrid">Bathroom Type</label>
+                    </div>
+                  </div>
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-floating mb-3" data-aos="fade-up">
+                      <input type="text" class="form-control" id="location" name="location" placeholder="Enter a location">
                       <label for="floatingInput">Your Location</label>
                     </div>
                   </div>
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-floating mb-3" data-aos="fade-up">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                        <option selected>AC</option>
-                        <option value="1">AC</option>
-                        <option value="2">Non AC</option>
-                      </select>
-                      <label for="floatingSelectGrid">Room Category</label>
+                      <input type="text" class="form-control" id="payment" name="payment">
+                      <label for="floatingInput">Monthly Payment</label>
                     </div>
                   </div>
 
-                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="form-floating mb-3" data-aos="fade-up">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                        <option selected>Double</option>
-                        <option value="1">Single</option>
-                      </select>
-                      <label for="floatingSelectGrid">Room Type</label>
-                    </div>
-                  </div>
-
-                  <div class="clearfix"></div>
-
-                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="form-floating mb-3" data-aos="fade-up">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                        <option selected>01</option>
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                      </select>
-                      <label for="floatingSelectGrid">Number of people</label>
-                    </div>
-                  </div>
-
-                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="form-floating mb-3" data-aos="fade-up">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                        <option selected>Double</option>
-                        <option value="1">Single</option>
-                      </select>
-                      <label for="floatingSelectGrid">Preferred Bed type</label>
-                    </div>
-                  </div>
-
-                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="form-floating mb-3" data-aos="fade-up">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                        <option selected>Brackfast</option>
-                        <option value="1">Luunch</option>
-                        <option value="2">Dinner</option>
-                      </select>
-                      <label for="floatingSelectGrid">Meal Type</label>
-                    </div>
-                  </div>
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                       <div class="mb-3" style="position: relative; top: -6px;" data-aos="fade-up">
                           <label><small>Upload Images</small></label>
-                          <input class="form-control" type="file" name="fFile" id="fFile" value="front_img" onkeyup="checkemptyFile()">
+                          <input class="form-control" type="file" name="rimages" id="rimages" value="front_img" onkeyup="checkemptyFile()">
                       </div>
                   </div>
 
                   <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="form-floating mb-3" data-aos="fade-up">
-                        <textarea class="form-control" placeholder="Leave a comment here" name="tMessage" id="tMessage" style="height: 100px;" onkeyup="checkemptyMessage()"></textarea>
-                        <label for="floatingTextarea">Facilities</label>
+                        <textarea class="form-control" placeholder="Leave a comment here" name="facility" id="facility" style="height: 100px;" onkeyup="checkemptyMessage()"></textarea>
+                        <label for="floatingTextarea">Facilities & More Details</label>
                     </div>
                 </div>
 
                   <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-up">
-                    <button type="button" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;">SEARCH NOW</button>
+                    <button type="submit" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;">SUBMIT NOW</button>
                   </div>
 
                 </form>
-
+              <!--------Post your Add Form----------------------->
             </div>
 
           </div>
@@ -227,5 +215,6 @@
     <script src="owl/owl_js.js"></script>
     <!-- owl carousel -->
 
-
-  </body>
+<!--Script for location Google map-->
+  
+</body>

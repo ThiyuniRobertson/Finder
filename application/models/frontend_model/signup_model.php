@@ -12,6 +12,7 @@ class signup_model extends CI_Model {
         $this->db->where('vPassword',$password);
         
         $query = $this->db->get();
+        // var_dump($query->row());die();
         if ($query->num_rows() == 1) {
             return $query->row();
         } else {

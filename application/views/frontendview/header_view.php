@@ -102,8 +102,15 @@
                 <!--<a href="#"><button type="button" class="btn btn-primary blue_white_btn">සිං</button></a>
                 <a href="#"><button type="button" class="btn btn-primary blue_white_btn">தமி</button></a>-->
                 <!-- ============== -->
-                <a href="<?php echo base_url('register'); ?>"> <button type="button" class="btn btn-primary blue_white_btn">Sign Up</button> </a>
-                <a href="<?php echo base_url('sign-up'); ?>"> <button type="button" class="btn btn-primary blue_btn">Login</button> </a>
+              <!-------Logging session create and logout method call------------------------>
+                <?php if($this->session->userdata('id')){;?>
+                  <a href="<?php echo base_url('my-account'); ?>"><button type="button" class="btn btn-primary magenta_btn"><img src="assets/images/account.png" width="20px;">
+                  &nbsp;Hi..<?php echo $this->session->userdata('vFname');?></button></a>
+                  <a href="<?php echo base_url("logout"); ?>">Logout<logouta>
+                <?php } else { ?>
+                  <a href="<?php echo base_url('register'); ?>"> <button type="button" class="btn btn-primary blue_white_btn">Sign Up</button> </a>
+                  <a href="<?php echo base_url('sign-up'); ?>"> <button type="button" class="btn btn-primary blue_btn">Login</button> </a>
+                <?php } ?>
               </div>
 
             </div>
@@ -142,7 +149,7 @@
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
         </p>
 
-        <a href=""><button type="button" class="btn btn-primary magenta_btn mb-3"><img src="<?php echo base_url('assets/images/post.png'); ?>" alt="" width="30px;"> &nbsp; POST YOUR ADD</button></a>
+        <a href="<?php echo base_url('post-add'); ?>"><button type="button" class="btn btn-primary magenta_btn mb-3"><img src="<?php echo base_url('assets/images/post.png'); ?>" alt="" width="30px;"> &nbsp; POST YOUR ADD</button></a>
 
         <div class="clearfix"></div>
 

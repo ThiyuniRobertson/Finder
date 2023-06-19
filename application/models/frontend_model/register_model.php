@@ -24,22 +24,14 @@ class register_model extends CI_Model {
   }
 	
 	public function save_register_inquiry($data) {
-    // print_r($data);die("jj");
-    // $data = array(
-    //   "vFname" => $this->input->post('fname', TRUE),
-    //   "vLname" => $this->input->post('lname', TRUE),
-    //   "vEmail" => $this->input->post('email', TRUE),
-    //   "vContactNum" => $this->input->post('telnum', TRUE),
-    //   "vPassword" => $this->input->post('password', TRUE),
-    // );
-    $query = $this->db->insert('tbl_register', $data);
-    if ($query) {
-      return true;
-  } else {
-      return false;
-  }
-
-  }
+    
+        $query = $this->db->insert('tbl_register', $data);
+        if ($query) {
+            return true;
+        }else {
+            return false;
+        }
+    }
 
 }
 
