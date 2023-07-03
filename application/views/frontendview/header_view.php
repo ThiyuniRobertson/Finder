@@ -13,7 +13,7 @@
     <link href="assets\css\mediaquery.css" rel="stylesheet">
     <!-- Custom CSS -->
 
-    <title>Electoral Reform Tracker</title>
+    <title>Finder</title>
 
     <!--favicon-->
     <link rel="shortcut icon" href="assets\images\favicon.png" />

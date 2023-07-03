@@ -26,10 +26,12 @@ class Post_add extends CI_Controller {
             $data['vRtype'] = $this->input->post('rtype');
             $data['vRcategory']= $this->input->post('rcategory');
             $data['vBedType'] = $this->input->post('bedtype');
-            $data['vMeal'] = $this->input->post('meal');
+            $data['vGender'] = $this->input->post('gender');
             $data['vBathroom'] = $this->input->post('bathroom');
             $data['vPayment'] = $this->input->post('payment');
             $data['vFacility'] = $this->input->post('facility');
+            $data['vTopic'] = $this->input->post('topic');
+            $data['vOwner'] = $this->session->userdata('id');
             // var_dump($data);exit();
             $response = $this->post_add_model->save_register_inquiry($data);
 

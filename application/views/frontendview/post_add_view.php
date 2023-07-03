@@ -64,12 +64,12 @@
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-floating mb-3" data-aos="fade-up">
-                      <select class="form-select" id="meal" name="meal" aria-label="Floating label select example">
+                      <select class="form-select" id="gender" name="gender" aria-label="Floating label select example">
                         <option selected> </option>
-                        <option value="With Meal">With Meal</option>
-                        <option value="Without Meal">Without Meal</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                       </select>
-                      <label for="floatingSelectGrid">Meal</label>
+                      <label for="floatingSelectGrid">Gender Type</label>
                     </div>
                   </div>
 
@@ -112,6 +112,12 @@
                         <label for="floatingTextarea">Facilities & More Details</label>
                     </div>
                 </div>
+
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-floating mb-3" data-aos="fade-up">
+                        <textarea class="form-control" placeholder="Leave a Topic" name="topic" id="topic" style="height: 100px;" onkeyup="checkemptyMessage()"></textarea>
+                        <label for="floatingTextarea">Topic For your add</label>
+                    </div>
 
                   <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-up">
                     <button type="submit" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;">SUBMIT NOW</button>
