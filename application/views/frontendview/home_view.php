@@ -14,22 +14,10 @@
           <div class="clearfix"></div>
 
           <div class="row">
-            
-            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
-              <div class="form-floating mb-3">
-                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                  <option selected>Colombo</option>
-                  <option value="1">Kandy</option>
-                  <option value="2">Galle</option>
-                  <option value="3">Matale</option>
-                </select>
-                <label for="floatingSelectGrid">District</label>
-              </div>
-            </div>
 
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" class="form-control" id="floatingInput" aria-label="Floating label select example">
                 <label for="floatingInput">Your Location</label>
               </div>
             </div>
@@ -37,49 +25,39 @@
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
                 <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                  <option selected>AC</option>
+                  <option selected></option>
                   <option value="1">AC</option>
                   <option value="2">Non AC</option>
-                </select>
-                <label for="floatingSelectGrid">Room Category</label>
-              </div>
-            </div>
-
-             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
-              <div class="form-floating mb-3">
-                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                  <option selected>Double</option>
-                  <option value="1">Single</option>
                 </select>
                 <label for="floatingSelectGrid">Room Type</label>
               </div>
             </div>
 
-            <div class="clearfix"></div>
-
-            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
-              <div class="form-floating mb-3">
-                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                  <option selected>01</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                </select>
-                <label for="floatingSelectGrid">Number of people</label>
-              </div>
-            </div>
-
              <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
                 <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                  <option selected>Double</option>
-                  <option value="1">Single</option>
+                  <option selected></option>
+                  <option value="1">One Person</option>
+                  <option value="2">Two Person</option>
+                  <option value="2">Three Person</option>
+                  <option value="2">Four Person</option>
                 </select>
-                <label for="floatingSelectGrid">Preferred Bed type</label>
+                <label for="floatingSelectGrid">Room Category</label>
               </div>
             </div>
 
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                  <option selected></option>
+                  <option value="1">Double</option>
+                  <option value="2">Single</option>
+                </select>
+                <label for="floatingSelectGrid">Preferred Bed Type</label>
+              </div>
+            </div>
+
+            <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
                 <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
                   <option selected></option>
@@ -88,6 +66,28 @@
                   <option value="3">Dinner</option>
                 </select>
                 <label for="floatingSelectGrid">Meal Type</label>
+              </div>
+            </div> -->
+
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                  <option selected></option>
+                  <option value="1">Attached Bathroom</option>
+                  <option value="2">Shared Bathroom</option>
+                </select>
+                <label for="floatingSelectGrid">Type of Bathroom</label>
+              </div>
+            </div>
+
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                  <option selected></option>
+                  <option value="1">Female</option>
+                  <option value="2">Male</option>
+                </select>
+                <label for="floatingSelectGrid">Gender</label>
               </div>
             </div>
 
@@ -155,12 +155,13 @@
 
      <div class="rounded shadow p-4" style="background-color: #eeeeee;">
       <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-      <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-      <p class="mb-1">Beds: 2, Baths: 1</p>
+      <h1 class="sub_heading mb-3"><?php echo $content->vTopic; ?></h1>
+      <p class="mb-1">Beds:<?php echo $content->vBedType;?></p>
+      <p class="mb-1">Baths: <?php echo $content->vBathroom;?></p>
       <p class="mb-1">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-      </p>
-      <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
+      <</p>
+      <h1 class="heading mb-1" data-aos="fade-up">Rs <?php echo $content->vPayment;?> / Month</h1>
       <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
      </div> 
 
@@ -172,221 +173,6 @@
 <!-- ========================= -->
 <!-- ========================= -->
 
-<div class="row">
-  
-  <!-- add -->
-   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-     <img src="<?php echo base_url('assets/images/h02.jpg'); ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-   </div>
-
-   <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-     <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-       
-      <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-      <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-      <p class="mb-1">Beds: 2, Baths: 1</p>
-      <p class="mb-1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-      </p>
-      <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
-     </div> 
-   </div>
-  <!-- add -->
-
-</div>
-
-<!-- ========================= -->
-<!-- ========================= -->
-
-<div class="row">
-  
-  <!-- add -->
-   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-     <img src="<?php echo base_url('assets/images/h03.jpg'); ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-   </div>
-
-   <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-
-    <!-- new badge -->
-    <div class="position-relative">
-      <div class="position-absolute top-0 end-0" style="top: 15px !important; right: 15px !important;">
-        <button type="button" class="btn btn-primary blue_btn" style="cursor: inherit;">NEW</button>
-      </div>
-    </div>
-    <!-- new badge -->
-
-     <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-      <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-      <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-      <p class="mb-1">Beds: 2, Baths: 1</p>
-      <p class="mb-1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-      </p>
-      <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
-     </div> 
-
-   </div>
-  <!-- add -->
-
-</div>
-
-<!-- ========================= -->
-<!-- ========================= -->
-
-<div class="row">
-  
-  <!-- add -->
-   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-     <img src="<?php echo base_url('assets/images/h04.jpg'); ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-   </div>
-
-   <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-     <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-       
-      <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-      <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-      <p class="mb-1">Beds: 2, Baths: 1</p>
-      <p class="mb-1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-      </p>
-      <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
-     </div> 
-   </div>
-  <!-- add -->
-
-</div>
-
-<!-- ========================= -->
-<!-- ========================= -->
-
-<div class="row">
-  
-  <!-- add -->
-   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-     <img src="<?php echo base_url('assets/images/h05.jpg'); ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-   </div>
-
-   <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-     <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-       
-      <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-      <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-      <p class="mb-1">Beds: 2, Baths: 1</p>
-      <p class="mb-1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-      </p>
-      <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
-     </div> 
-   </div>
-  <!-- add -->
-
-</div>
-
-<!-- ========================= -->
-<!-- ========================= -->
-
-<div class="row">
-  
-  <!-- add -->
-   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-     <img src="<?php echo base_url('assets/images/h06.jpg'); ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-   </div>
-
-   <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-
-    <!-- new badge -->
-    <div class="position-relative">
-      <div class="position-absolute top-0 end-0" style="top: 15px !important; right: 15px !important;">
-        <button type="button" class="btn btn-primary blue_btn" style="cursor: inherit;">NEW</button>
-      </div>
-    </div>
-    <!-- new badge -->
-
-     <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-      <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-      <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-      <p class="mb-1">Beds: 2, Baths: 1</p>
-      <p class="mb-1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-      </p>
-      <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
-     </div>
-
-   </div>
-  <!-- add -->
-
-</div>
-
-<!-- ========================= -->
-<!-- ========================= -->
-
-<div class="row">
-  
-  <!-- add -->
-   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-     <img src="<?php echo base_url('assets/images/h07.jpg'); ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-   </div>
-
-   <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-
-    <!-- new badge -->
-    <div class="position-relative">
-      <div class="position-absolute top-0 end-0" style="top: 15px !important; right: 15px !important;">
-        <button type="button" class="btn btn-primary blue_btn" style="cursor: inherit;">NEW</button>
-      </div>
-    </div>
-    <!-- new badge -->
-
-     <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-      <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-      <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-      <p class="mb-1">Beds: 2, Baths: 1</p>
-      <p class="mb-1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-      </p>
-      <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
-     </div> 
-
-   </div>
-  <!-- add -->
-
-</div>
-
-<!-- ========================= -->
-<!-- ========================= -->
-
-<div class="row">
-  
-  <!-- add -->
-   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-     <img src="<?php echo base_url('assets/images/h08.jpg'); ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-   </div>
-
-   <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-     <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-       
-      <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-      <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-      <p class="mb-1">Beds: 2, Baths: 1</p>
-      <p class="mb-1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-      </p>
-      <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-      <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
-     </div> 
-   </div>
-  <!-- add -->
-
-</div>
-
-<!-- ========================= -->
-<!-- ========================= -->
 
 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
      

@@ -9,6 +9,70 @@
 
   </div>
 
+  <!-- booking Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title heading" id="exampleModalLabel">BOOK NOW</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="First name">
+                <label for="floatingInput">First Name*</label>
+              </div>
+            </div>
+
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name">
+                <label for="floatingInput">Last Name*</label>
+              </div>
+            </div>
+
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                <label for="floatingInput">Email*</label>
+              </div>
+            </div>
+
+            <!--<div class="clearfix"></div>-->
+
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="form-floating mb-3">
+                <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="10 Digit Mobile No">
+                <label for="floatingInput">Contact Number*</label>
+              </div>
+            </div>  
+
+            <div class="clearfix"></div>
+
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="form-floating mb-3" data-aos="fade-up">
+                    <textarea class="form-control" placeholder="Leave a comment here" name="tMessage" id="tMessage" style="height: 100px;" onkeyup="checkemptyMessage()"></textarea>
+                    <label for="floatingTextarea">Your Message</label>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <button type="submit" id="butregister" name="butregister" class="btn btn-primary green_btn" style="width: 100%; font-weight: 900; height: 55px;"><span class="align-middle">BOOK NOW</span></button>
+            </div>
+
+            </div>
+          </div>
+  
+    </div>
+  </div>
+</div>
+  <!-- booking Modal -->
+
 
     <div class="clearfix"></div>
     <br>
@@ -101,7 +165,11 @@
             <h1 class="heading mb-3" data-aos="fade-up">Rs 15,000.00 / Month</h1>
 
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-up">
-              <button type="button" class="btn btn-primary magenta_btn mb-3" style="height: 55px; text-transform: uppercase;"> <img src="assets/images/fav.png" width="30px;"> &nbsp; Add to favorite</button>
+              <button type="button" class="btn btn-primary magenta_btn mb-3 w-100" style="height: 55px; text-transform: uppercase;"> <img src="assets/images/fav.png" width="30px;"> &nbsp; Add to favorite</button>
+            </div>
+
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-up">
+              <button type="button" class="btn btn-primary magenta_btn mb-3 w-100"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 55px; text-transform: uppercase;"> <img src="assets/images/booking.png" width="30px;"> &nbsp; Book Now</button>
             </div>
 
             <div class="clearfix"></div>
@@ -112,12 +180,53 @@
              <!-- map -->
              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31691.028884033945!2d79.98561835659727!3d6.845134121702999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2518e99e2ee8d%3A0xc3eebfdbc86273ee!2sHomagama!5e0!3m2!1sen!2slk!4v1684512367627!5m2!1sen!2slk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
              <!-- map -->
+            
+        <!-------------Location detail--------------------->
+             <div class="clearfix"></div>
+             <br>
+             
+             <h1 class="sub_heading mb-4" data-aos="fade-up">Location Details</h1>
 
-          </div>
+             <div class="row">
 
-        </div>
-        
-      </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <p class="p-0"><b>From: </b></p>
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <p class="p-0">Nugegoda, Sri Lanka.</p>
+              </div>
+
+             <div class="clearfix"></div>
+
+             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <p class="p-0"><b>To: </b></p>
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <p class="p-0">Homagama, Sri Lanka.</p>
+              </div>
+
+             <div class="clearfix"></div>
+
+             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <p class="p-0"><b>Driving distance: </b></p>
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <p class="p-0">12.8 km.</p>
+              </div>
+
+             <div class="clearfix"></div>
+
+             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <p class="p-0"><b>Duration: </b></p>
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <p class="p-0">31 mins.</p>
+              </div>
+
+             <div class="clearfix"></div>
+
+            </div>
+      <!-------------Location detail--------------------->
       
       <!-- ========================= -->
       <!-- ========================= -->
@@ -280,59 +389,9 @@
     <!--=============================================-->
   <!--===================body====================-->
 
-  <!--=============================================-->
-  <!--===================scroll top====================-->
-
-  <button class="scroll-top">
-    <div class="arrow up"></div>
-  </button>
-
-  <!--=============================================-->
-  <!--===================scroll top====================-->
 
 
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-      <script src="js/popper.min.js" ></script> 
-      <script src="js/bootstrap.min.js" ></script>
-
-
-      <!-- scroll top -->
-      <script src="js/drop_down_menu.js"></script>
-      <!-- scroll top -->
-
-    <!--loading effects-->
-    <script src="js/aos.js"></script>
-
-    <script>
-    AOS.init({
-    easing: 'ease-out-back',
-            duration: 1000
-    });</script>
-
-    <!--loading effects-->
-
-     <!--jarallax js-->
-    <script src="jarallax/jarallax_js.js"></script>
-    <!--jarallax js-->
-
-    <!--jarallax-->
-    <script type="text/javascript">
-        /* init Jarallax */
-        $('.jarallax').jarallax({
-            speed: 0.5,
-            imgWidth: 1366,
-            imgHeight: 768
-        })
-    </script>
-    <!--jarallax-->
-
-     <!-- owl carousel -->
-    <script src="owl/owl.carousel.min.js"></script>
-    <script src="owl/owl_js.js"></script>
-    <!-- owl carousel -->
-
-
-  </body>
-</html>
+  <script src="<?php echo base_url('assets/js/jquery-3.2.1.min.js'); ?>"></script>
+      <script src="<?php echo base_url('assets/js/popper.min.js'); ?>" ></script> 
+      <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>" ></script>

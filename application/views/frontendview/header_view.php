@@ -9,14 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link href="assets\css\finder.css" rel="stylesheet">
-    <link href="assets\css\mediaquery.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/finder.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/mediaquery.css'); ?>" rel="stylesheet">
     <!-- Custom CSS -->
 
     <title>Finder</title>
 
     <!--favicon-->
-    <link rel="shortcut icon" href="assets\images\favicon.png" />
+    <link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.png'); ?>" />
     <!--favicon-->
 
     <!-- font awsom --> 
@@ -24,19 +24,26 @@
     <!-- font awsom --> 
 
     <!--loading effect-->
-    <link rel="stylesheet" href="assets\css\loading_styles.css" type="text/css" media="screen"/>
-    <link rel="stylesheet" href="assets\css\aos.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/loading_styles.css'); ?>" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/aos.css'); ?>" type="text/css" media="screen"/>
     <!--loading effect-->
 
     <!--jarallax js & css-->
-    <link href="assets\jarallax/jarallax_css.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?php echo base_url('assets/jarallax/jarallax_css.css'); ?>" rel="stylesheet" type="text/css" media="screen">
     <!--jarallax js & css-->
 
     <!-- owl carousel -->
-    <link href="assets\owl\owl.carousel.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets\owl\owl_css.css">
+    <link href="<?php echo base_url('assets/owl/owl.carousel.min.css'); ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl/owl_css.css'); ?>">
     <!-- owl carousel -->
+<!------------------------------------------------------------->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AZeJwG7AYyT3Fr7_kI2BnV3_y9SbK7s&libraries=places"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+<!------------------------------------------------------------->    
 
     <!--scroll bar style-->
     <style>

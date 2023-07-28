@@ -10,6 +10,13 @@ class Post_add extends CI_Controller {
         $methodToCall = $method_exists ? $method : 'index';
         $this->$methodToCall($method_exists ? $params : $method);
     }
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->library('Googlemaps');
+        $this->load->model('frontend_model/post_add_model');
+    }
     public function index() {
                 
 		$this->load->view('frontendview/header_view');
@@ -20,7 +27,7 @@ class Post_add extends CI_Controller {
 
     public function save_inquiry() {
             
-        $this->load->model('frontend_model/post_add_model');
+            $this->load->model('frontend_model/post_add_model');
 
             //Setting values for tabel columns
             $data['vRtype'] = $this->input->post('rtype');
@@ -28,6 +35,9 @@ class Post_add extends CI_Controller {
             $data['vBedType'] = $this->input->post('bedtype');
             $data['vGender'] = $this->input->post('gender');
             $data['vBathroom'] = $this->input->post('bathroom');
+            // $data['vLocation'] = $this->input->post('location');
+            $data['dLatitude']= $this->input->post('latitude');
+            $data['dLongitude'] = $this->input->post('longitude');
             $data['vPayment'] = $this->input->post('payment');
             $data['vFacility'] = $this->input->post('facility');
             $data['vTopic'] = $this->input->post('topic');

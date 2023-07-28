@@ -42,20 +42,23 @@
   <!--=============================================-->
   <!--===================scroll top====================-->
 
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AZeJwG7AYyT3Fr7_kI2BnV3_y9SbK7s&libraries=places"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-      <script src="assets/js/popper.min.js" ></script> 
-      <script src="assets/js/bootstrap.min.js" ></script>
+    
 
 
       <!-- scroll top -->
-      <script src="assets/js/drop_down_menu.js"></script>
+      <script src="<?php echo base_url('assets/js/drop_down_menu.js'); ?>"></script>
       <!-- scroll top -->
 
     <!--loading effects-->
-    <script src="assets/js/aos.js"></script>
+    <script src="<?php echo base_url('assets/js/aos.js'); ?>"></script>
 
     <script>
     AOS.init({
@@ -66,13 +69,13 @@
     <!--loading effects-->
 
      <!--jarallax js-->  <!--jarallax using for Logo slider-->
-    <script src="assets/jarallax/jarallax_js.js"></script>
+    <script src="<?php echo base_url('assets/jarallax/jarallax_js.js'); ?>"></script>
     <!--jarallax js-->
 
     <!--jarallax-->
     <script type="text/javascript">
         /* init Jarallax */
-        $('.assets/jarallax').jarallax({
+        $('.jarallax').jarallax({
             speed: 0.5,
             imgWidth: 1366,
             imgHeight: 768
@@ -81,6 +84,82 @@
     <!--jarallax-->
 
      <!-- owl carousel -->
-    <script src="assets/owl/owl.carousel.min.js"></script>
-    <script src="assets/owl/owl_js.js"></script>
+    <script src="<?php echo base_url('assets/owl/owl.carousel.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/owl/owl_js.js'); ?>"></script>
     <!-- owl carousel -->
+
+    <script>
+        var map, marker;
+
+        function initmodal(){
+          
+            $("#location-modal").modal();
+            
+            var location = new google.maps.LatLng(6.821, 80.031);
+            //var location = new google.maps.LatLng(0, 0);
+            var mapProperty = {
+                center: location,
+                zoom: 7,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            // alert("gg");
+            map = new google.maps.Map(document.getElementById('map'),mapProperty);
+            // alert("jj");
+            marker = new google.maps.Marker({
+                map: map,
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                position: location
+            });
+
+            geocodePosition(marker.getPosition());
+
+            google.maps.event.addListener(marker, 'dragend', function(){
+                map.setCenter(marker.getPosition());
+                geocodePosition(marker.getPosition());
+                $("#latitude").val(marker.getPosition().lat());
+
+                $("#longitude").val(maker.getPosition().lng());
+            });
+
+            currentLat = $("#latitude").val();
+            currentLng = $("#longitude").val();
+
+            if (navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(position){
+                    pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    $("#latitude").val(pos.lat);
+                    $("#longitude").val(pos.lng);
+
+                    marker.setPosition(pos);
+
+                    map.setCenter(marker.getPosition());
+                    geocodePosition(marker.getPosition());
+
+                });
+            }
+        }
+
+        function geocodePosition(pos){
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+              latLng: pos
+            },
+        
+            function (results, status){
+                if (status == google.maps.GeocoderStatus.OK){
+                    $("#address-label").html(results[0].formatted_address);
+                    $("#address").val(results[0].formatted_address);
+                }else{
+                    $("#address-label").html('can not determine address at this location');
+                }
+            }
+            );
+        }
+    </script>
+    </body>
+</html>

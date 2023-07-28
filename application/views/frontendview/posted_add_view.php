@@ -37,7 +37,7 @@
 
            <div class="rounded shadow p-4" style="background-color: #eeeeee;">
             <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-            <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
+            <h1 class="sub_heading mb-3"><?php echo $content->vTopic; ?></h1>
             <p class="mb-1">Beds: 2, Baths: 1</p>
             <p class="mb-1">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..

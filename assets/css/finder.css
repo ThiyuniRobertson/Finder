@@ -771,6 +771,7 @@ a{
     padding-left: 17px !important;
 }
 
+
 /*inner pages
 
 /*****************************/
@@ -860,8 +861,6 @@ a{
 
 /*========================================================================*/
 /*========================================================================*/
-/*=====================Solution by TEKGEEKS (pvt) LTD=====================*/
-/*============DESIGN & CSS DEVELOPMENT - DUMIDU WIMALARATHNA==============*/
 /*========================================================================*/
 /*========================================================================*/
 
@@ -1018,3 +1017,26 @@ a{
     /*.progress_circle{ margin-bottom: 20px; }*/
 }
 /*progress circle*/
+
+/*map*/
+#googleMap {
+    width: 80%;
+    height: 400px;
+    margin: 10px auto;
+  }
+  
+  /*output box*/
+  #output {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px auto;
+  }
+  
+  #mode {
+    color: black;
+  }
+  #map{
+    width: 80%;
+    height: 400px;
+    margin: 10px auto;
+  }
