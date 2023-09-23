@@ -332,7 +332,7 @@
           <!-- new badge -->
 
            <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-            <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
+            <p class="fst-italic mb-1">Posted on 20 July, Homagama City, Homagama</p>
             <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
             <p class="mb-1">Beds: 2, Baths: 1</p>
             <p class="mb-1">

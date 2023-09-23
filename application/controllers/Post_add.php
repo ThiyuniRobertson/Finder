@@ -36,13 +36,20 @@ class Post_add extends CI_Controller {
             $data['vGender'] = $this->input->post('gender');
             $data['vBathroom'] = $this->input->post('bathroom');
             // $data['vLocation'] = $this->input->post('location');
-            $data['dLatitude']= $this->input->post('latitude');
-            $data['dLongitude'] = $this->input->post('longitude');
+            // $data['dLatitude']= $this->input->post('latitude');
+            $latitude = $this->input->post('latitude');
+            $data['dLatitude'] = round($latitude, 30);
+
+            $longitude = $this->input->post('longitude');
+            $data['dLongitude'] = round($longitude, 30);
+            
             $data['vPayment'] = $this->input->post('payment');
             $data['vFacility'] = $this->input->post('facility');
             $data['vTopic'] = $this->input->post('topic');
             $data['vOwner'] = $this->session->userdata('id');
             // var_dump($data);exit();
+            // $data['vOwner'] = 1;
+            
             $response = $this->post_add_model->save_register_inquiry($data);
 
             if($response==true){

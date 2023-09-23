@@ -9,7 +9,7 @@ class post_add_model extends CI_Model {
     public function load_contact_details() {
 
         $query = $this->db->query("SELECT * FROM  tbl_advertisement WHERE id='1'");
-
+     
         if ($query->num_rows() == 1) {
             return $query->result();
         } else {
@@ -19,9 +19,17 @@ class post_add_model extends CI_Model {
 	
 	public function save_register_inquiry($data) {
        
-    //var_dump($name);die();
-    // $query = 
+    // var_dump($data);die();
     $this->db->insert('tbl_advertisement', $data);
+    $query = $this->db->last_query();
+
+    // echo $query; die("habs");
+    // if ($query->num_rows() == 1) {
+    //   return $query->result();
+    // } else {
+    //     return array();
+    // }
+    
     $insert_id = $this->db->insert_id();
     
     // if ($query) {

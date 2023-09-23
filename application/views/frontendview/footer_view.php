@@ -99,7 +99,7 @@
             //var location = new google.maps.LatLng(0, 0);
             var mapProperty = {
                 center: location,
-                zoom: 7,
+                zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             // alert("gg");
@@ -119,7 +119,7 @@
                 geocodePosition(marker.getPosition());
                 $("#latitude").val(marker.getPosition().lat());
 
-                $("#longitude").val(maker.getPosition().lng());
+                $("#longitude").val(marker.getPosition().lng());
             });
 
             currentLat = $("#latitude").val();

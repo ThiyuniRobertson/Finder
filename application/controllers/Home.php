@@ -13,10 +13,14 @@ class Home extends CI_Controller {
     public function index() {
         // var_dump("test");exit();
         $this->load->model('frontend_model/home_model');
+        $this->load->helper('header_helper');
         
         $data = array();
         
         $data['content'] = $this->home_model->get_add_content();
+        // var_dump($data['content']);exit();
+        // $data['images'] = $this->home_model->get_add_content();
+
 
         // var_dump($data['content'] );exit();
         //$this->load->model('frontend_model/contact_model');

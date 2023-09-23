@@ -84,7 +84,7 @@
 
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
         <div class="form-floating mb-3" data-aos="fade-up">
-          <!-- <input type="hidden" class="form-control" id="location" name="location" placeholder="Enter a location"/> -->
+          <!-- <input type="text" class="form-control" id="location" name="location" placeholder="Enter a location"/> -->
           <a  class="form-control" onclick="initmodal()"><i class="fa fa-map-marker mr-12"></i>Choose Location</a>
           <!-- <label for="floatingInput" >Location</label>  -->
         </div>
@@ -93,14 +93,14 @@
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
         <div class="form-floating mb-3" data-aos="fade-up">
           <input type="text" class="form-control" id="latitude" name="latitude" />
-           <label for="floatingInput" class="form-control-label col-sm-2">Latitude</label>
+           <!-- <label for="floatingInput" class="form-control-label col-sm-2">Latitude</label> -->
         </div>
       </div>
 
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
         <div class="form-floating mb-3" data-aos="fade-up">
           <input type="text" class="form-control" id="longitude" name="longitude"/>
-          <label for="floatingInput">Longitude</label>
+          <!-- <label for="floatingInput">Longitude</label> -->
         </div>
       </div>
 
