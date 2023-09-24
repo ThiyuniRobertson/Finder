@@ -1,7 +1,7 @@
 <!--===================body====================-->
 
 
-      <!-- search section -->
+<!--------------- search section ------------------->
   <div class="container">
     
     <div class="row m-auto">
@@ -14,14 +14,14 @@
           <div class="clearfix"></div>
 
           <div class="row">
-
+          <!-----------------Location Select------------------------>
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" aria-label="Floating label select example">
-                <label for="floatingInput">Your Location</label>
+                <label for="floatingInput">Type Your Location Name</label>
               </div>
-            </div>
-
+            </div> 
+          <!---------------------------------------------------->
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
                 <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
@@ -106,7 +106,7 @@
     </div>
   </div>
 
-      <!-- search section -->
+<!-------------------------------------------- search section -------------------------------------->
 
 
     </div>

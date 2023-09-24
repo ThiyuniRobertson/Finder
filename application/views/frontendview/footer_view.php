@@ -50,8 +50,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    
-
 
       <!-- scroll top -->
       <script src="<?php echo base_url('assets/js/drop_down_menu.js'); ?>"></script>
@@ -88,6 +86,39 @@
     <script src="<?php echo base_url('assets/owl/owl_js.js'); ?>"></script>
     <!-- owl carousel -->
 
+<!-----------------------Select location name------------------------->
+<script>
+    var searchInput ='floatingInput';
+
+    $(document).ready(function (){
+        var autocomplete;
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)),{
+            types: ['geocode', 'establishment'],
+        });
+
+        google.maps.event.addListener(autocomplete, 'place_changed',function(){
+            var near_place = autocomplete.getPlace();
+        });
+
+        // Now you can use 'latitude' and 'longitude' in your code as needed
+        autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+
+            if (place.geometry && place.geometry.location) {
+                var latitude = place.geometry.location.lat();
+                var longitude = place.geometry.location.lng();
+
+                console.log("Latitude: " + latitude);
+                console.log("Longitude: " + longitude);
+                // alert(latitude, longitude);
+            }
+        });
+    });
+</script>
+<!-------------------------Select location name----------------------------------->
+
+<!-------------------select location on map------------------------------------->
+<!----------------------------------------------------------------------------------------->
     <script>
         var map, marker;
 
@@ -161,5 +192,8 @@
             );
         }
     </script>
+<!-------------------select location on map------------------------------------->
+<!----------------------------------------------------------------------------------------->
+
     </body>
 </html>
