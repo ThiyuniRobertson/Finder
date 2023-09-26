@@ -64,3 +64,4 @@ $route['posted-add'] = 'Posted_add';
 $route['my-fav'] = 'My_fav';
 $route['my-account'] = 'My_account';
 $route['logout'] = 'Sign_up/logout';
+$route['home'] = 'Home';

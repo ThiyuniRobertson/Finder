@@ -12,15 +12,19 @@
 
           <h2 class="sub_heading"><img src="<?php echo base_url('assets/images/search.png'); ?>" alt="" width="30px;" data-aos="fade-up"> SEARCH</h2>
           <div class="clearfix"></div>
-
+        <form method="post" id="destinationForm"> 
           <div class="row">
-          <!-----------------Location Select------------------------>
+          <!-----------------Location Select------------------------> 
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" aria-label="Floating label select example">
-                <label for="floatingInput">Type Your Location Name</label>
+                <input type="text" class="form-control" name="search_input" id="search_input"  placeholder="Type Location Name" required>
+                <label for="search_input">Type Your Location Name</label>
               </div>
             </div> 
+
+            <!-- Hidden input fields to store latitude and longitude -->
+                <input type="hidden" name="user_latitude" id="user_latitude"> 
+                <input type="hidden" name="user_longitude" id="user_longitude">
           <!---------------------------------------------------->
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
@@ -92,10 +96,11 @@
             </div>
 
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
-              <button type="button" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;">SEARCH NOW</button>
+              <button type="button" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;" onClick="getData();"> SEARCH NOW</button>
             </div>
-
+         
           </div>
+        </form>
 
          </div>
 
@@ -107,8 +112,6 @@
   </div>
 
 <!-------------------------------------------- search section -------------------------------------->
-
-
     </div>
 
   </div>
@@ -230,7 +233,7 @@
 <div class="clearfix"></div>
 <br>
 <br>
-
+<div id="distance-container"></div>
 
 <!-- partners section -->
 
@@ -322,3 +325,78 @@
 <br>
 
 <!--=============================================-->
+
+<!-------- JavaScript to initialize Google Maps autocomplete and update hidden inputs -->
+    <script>
+      var searchInput = document.getElementById('search_input');
+      var selectedLatitudeInput = document.getElementById('user_latitude');
+      var selectedLongitudeInput = document.getElementById('user_longitude');
+        
+      var autocomplete = new google.maps.places.Autocomplete(searchInput, {
+        types: ['geocode', 'establishment']
+      });
+
+      autocomplete.addListener('place_changed', function () {
+        var place = autocomplete.getPlace();
+        if (place.geometry && place.geometry.location) {
+          selectedLatitudeInput.value = place.geometry.location.lat();
+          selectedLongitudeInput.value = place.geometry.location.lng();
+        }
+      });
+    </script>
+<!-- ----------------------------------------------------------------------------------->
+<!-------- JavaScript to calculate distance-------------------------------------------->
+<script>
+        function getData() {
+          // alert("Thiyuni");
+
+        // Retrieve the user_latitude and user_longitude values
+            var destLat = parseFloat(document.getElementById('user_latitude').value);
+            var destLon = parseFloat(document.getElementById('user_longitude').value);
+            alert(destLat);
+            alert(destLon);
+            // Make an AJAX request to fetch the locations data
+            $.ajax({
+            url: '<?= base_url('Home/getLocationsData') ?>', // Adjust the URL to match your route
+            type: 'GET',
+            success: function(response) {
+                // Iterate through the locations data and calculate distance
+                response.forEach(function(location) {
+                    var originLat = location.dLatitude;
+                    var originLon = location.dLongitude;
+                    var topic = location.vTopic;
+
+                // Call a function to calculate distance using retrieved data
+                    calculateDistanceWithGoogleMapsAPI(originLat, originLon, destLat, destLon, topic);
+                });
+            },
+            error: function(xhr, status, error) {
+                console.log('Error fetching locations data:', error);
+            }
+        });
+    }
+
+        function calculateDistanceWithGoogleMapsAPI(originLat, originLon, destLat, destLon, topic) {
+            var origin = new google.maps.LatLng(originLat, originLon);
+            var destination = new google.maps.LatLng(destLat, destLon);
+            
+            var service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix(
+                {
+                    origins: [origin],
+                    destinations: [destination],
+                    travelMode: 'DRIVING',
+                    unitSystem: google.maps.UnitSystem.METRIC
+                },
+                function(response, status) {
+                    if (status === 'OK') {
+                        var distance = response.rows[0].elements[0].distance.text;
+                        $('#distance-container').append('<p>Distance '+ topic +' : ' + distance + '</p>'); //'+topic+' --> topic var concatinate with text
+                    } else {
+                        console.log("Error: " + status);
+                    }
+                }
+            );
+}
+
+    </script>
