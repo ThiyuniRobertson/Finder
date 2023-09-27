@@ -1,16 +1,8 @@
   <!--=============================================-->
   <!--===================body====================-->
 
-            <!-- ========================== -->
-
-          </div>
-
-        </div>
-
-  </div>
-
-  <!-- booking Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!------------------booking Modal---------------------------------->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -41,7 +33,7 @@
               </div>
             </div>
 
-            <!--<div class="clearfix"></div>-->
+            <div class="clearfix"></div>
 
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
               <div class="form-floating mb-3">
@@ -70,23 +62,20 @@
   
     </div>
   </div>
-</div>
-  <!-- booking Modal -->
-
-
+</div> -->
+<!------------------------booking Modal--------------------------------->
     <div class="clearfix"></div>
     <br>
     <br>
-  
-    <!-- add section -->
-
+<!-------------------------add detailed page------------------------->
     <div class="container">
 
+    
       <div class="row">
 
         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
           <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-          <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
+          <h1 class="sub_heading mb-3"><?php echo $add_detail->vTopic; ?></h1>
 
           <!-- slider -->
           <div id="carouselExampleIndicators" class="carousel slide mb-4" data-bs-ride="carousel">
@@ -116,7 +105,7 @@
             </button>
           </div>
           <!-- slider -->
-
+        
           <p class="mb-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </p>
@@ -154,15 +143,14 @@
               <a href=""><img src="assets/images/chat.png" alt="" width="40px;"></a>
             </div>
 
-            <p class="mb-1">Beds: 2, Baths: 1</p>
+            <p class="mb-1">Beds:<?php echo $add_detail->vBedType;?></p>
+            <p class="mb-1">Baths:<?php echo $add_detail->vBathroom;?></p>
 
-            <p class="mb-3">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-            </p>
+            <p class="mb-3">Baths:<?php echo $add_detail->vFacility	;?></p>
 
             <hr>
 
-            <h1 class="heading mb-3" data-aos="fade-up">Rs 15,000.00 / Month</h1>
+            <h1 class="heading mb-3" data-aos="fade-up">Rs <?php echo $add_detail->vPayment;?> / Month</h1>
 
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-up">
               <button type="button" class="btn btn-primary magenta_btn mb-3 w-100" style="height: 55px; text-transform: uppercase;"> <img src="assets/images/fav.png" width="30px;"> &nbsp; Add to favorite</button>
@@ -181,8 +169,8 @@
              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31691.028884033945!2d79.98561835659727!3d6.845134121702999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2518e99e2ee8d%3A0xc3eebfdbc86273ee!2sHomagama!5e0!3m2!1sen!2slk!4v1684512367627!5m2!1sen!2slk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
              <!-- map -->
             
-        <!-------------Location detail--------------------->
-             <div class="clearfix"></div>
+<!--------------------Location detail--------------------------------------------->
+          <div class="clearfix"></div>
              <br>
              
              <h1 class="sub_heading mb-4" data-aos="fade-up">Location Details</h1>
@@ -225,18 +213,18 @@
 
              <div class="clearfix"></div>
 
-            </div>
-      <!-------------Location detail--------------------->
+          </div>
+<!--------------------Location detail------------------------------------->
       
       <!-- ========================= -->
       <!-- ========================= -->
 
     </div>
 
-    <!-- add section -->
+<!-- --------------------add section--------------------------------------->
 
 
-     <div class="clearfix"></div>
+   <div class="clearfix"></div>
     <br>
     <br>
 
@@ -279,13 +267,10 @@
             <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="assets/images/arrow.png"></a>
            </div> 
 
-         </div>
+        </div>
         <!-- add -->
-
-      </div>
-
-      <!-- ========================= -->
-      <!-- ========================= -->
+<!--------------========================= -->
+<!--------------========================= -->
 
       <div class="row">
         

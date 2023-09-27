@@ -42,10 +42,10 @@
   <!--=============================================-->
   <!--===================scroll top====================-->
 
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AZeJwG7AYyT3Fr7_kI2BnV3_y9SbK7s&libraries=places"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AZeJwG7AYyT3Fr7_kI2BnV3_y9SbK7s&libraries=places"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -194,6 +194,90 @@
     </script>
 <!-------------------select location on map------------------------------------->
 <!----------------------------------------------------------------------------------------->
+
+<!-- calculate the distance -->
+
+<!-------- JavaScript to initialize Google Maps autocomplete and update hidden inputs -->
+<script>
+      var searchInput = document.getElementById('search_input');
+      var selectedLatitudeInput = document.getElementById('user_latitude');
+      var selectedLongitudeInput = document.getElementById('user_longitude');
+        
+      var autocomplete = new google.maps.places.Autocomplete(searchInput, {
+        types: ['geocode', 'establishment']
+      });
+
+      autocomplete.addListener('place_changed', function () {
+        var place = autocomplete.getPlace();
+        if (place.geometry && place.geometry.location) {
+          selectedLatitudeInput.value = place.geometry.location.lat();
+          selectedLongitudeInput.value = place.geometry.location.lng();
+        }
+      });
+    </script>
+<!-- ----------------------------------------------------------------------------------->
+<!-------- JavaScript to calculate distance-------------------------------------------->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+<script>
+        function getData() {
+          // alert("Thiyuni");
+
+            // Retrieve the user_latitude and user_longitude values
+                var destLat = parseFloat(document.getElementById('user_latitude').value);
+                var destLon = parseFloat(document.getElementById('user_longitude').value);
+            //  alert(destLat);
+            //  alert(destLon);
+                // Make an AJAX request to fetch the locations data
+                $(document).ready(function() {
+                $.ajax({
+                url: '<?= base_url('Home/getLocationsData') ?>', // Adjust the URL to match your route
+                type: 'GET',
+                success: function(response) {
+                    // Iterate through the locations data and calculate distance
+                    response.forEach(function(location) {
+                        // alert("Thiyuni");
+                        var originLat = location.dLatitude;
+                        var originLon = location.dLongitude;
+                        var topic = location.vTopic;
+
+                    // Call a function to calculate distance using retrieved data
+                        calculateDistanceWithGoogleMapsAPI(originLat, originLon, destLat, destLon, topic);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.log('Error fetching locations data:', error);
+                }
+            });
+        });
+        }
+
+        function calculateDistanceWithGoogleMapsAPI(originLat, originLon, destLat, destLon, topic) {
+            var origin = new google.maps.LatLng(originLat, originLon);
+            var destination = new google.maps.LatLng(destLat, destLon);
+            
+            var service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix(
+                {
+                    origins: [origin],
+                    destinations: [destination],
+                    travelMode: 'DRIVING',
+                    unitSystem: google.maps.UnitSystem.METRIC
+                },
+                function(response, status) {
+                    if (status === 'OK') {
+                        var distance = response.rows[0].elements[0].distance.text;
+                        $('#distance-container').append('<p>Distance '+ topic +' : ' + distance + '</p>'); //'+topic+' --> topic var concatinate with text
+                    } else {
+                        console.log("Error: " + status);
+                    }
+                }
+            );
+}
+
+    </script>
+
+
 
     </body>
 </html>

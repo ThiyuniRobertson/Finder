@@ -21,6 +21,30 @@ class Add_detail extends CI_Controller {
 		$this->load->view('frontendview/footer_view');
 		
     }
+
+    public function add_details() {
+        $id = $this->uri->segment(2); 
+        // var_dump($id);exit();
+        
+        $this->load->model('frontend_model/post_add_model');
+        $this->load->library('pagination');
+        
+        $data = array();
+        // $data_header = array();
+        // $data_header['meta'] = 9;
+        
+        $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages($id);
+        // var_dump( $data['add_detail'] );exit();
+        // $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages();
+        // $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages();
+        // $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages($id);
+        // $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages($id);
+       
+        
+        $this->load->view('frontendview/header_view');
+        $this->load->view('frontendview/add_detail_view',$data);
+        $this->load->view('frontendview/footer_view');
+    }  
 	 
 }
 ?>

@@ -34,21 +34,23 @@ class Home extends CI_Controller {
         //$this->load->model('frontend_model/contact_model');
 
         //$data["contact_us"] = $this->contact_model->load_contact_details();
+        $data['all_data'] = $this->Home_model->getLocationsFromDatabase();
+        // var_dump($data['all_data']);exit();
                 
 		$this->load->view('frontendview/header_view');
-		$this->load->view('frontendview/home_view');
+		$this->load->view('frontendview/home_view',$data);
 		$this->load->view('frontendview/footer_view');		
     }
 
     public function showDistance() {
-        $this->load->model('Home_model');
-        $data['locations'] = $this->Home_model->getLocationsFromDatabase();
+        $this->load->model('frontend_model/Home_model');
+        $data['all_data'] = $this->Home_model->getLocationsFromDatabase();
         $this->load->view('home_view', $data);
     }
 
     public function getLocationsData() {
     // Fetch your locations data (replace this with your actual logic)
-        $locationsData = $this->home_model->getLocationsFromDatabase();
+        $locationsData = $this->Home_model->getLocationsFromDatabase();
         // echo($locationsData);
         
     // Return the data as JSON

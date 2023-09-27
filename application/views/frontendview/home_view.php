@@ -122,7 +122,8 @@
 <div class="clearfix"></div>
 <br>
 <br>
-
+<!-----------------------addvertisement display------------------------------------------------------>
+    
 <!-- add section -->
 
 <div class="container">
@@ -139,17 +140,22 @@
   
 </div>
 
-<?php if(!empty($content)) {foreach($content as $item) { ?>
+<?php if(!empty($all_data)) {foreach($all_data as $item) { ?>
+    
     <div class="row">
-      
+    
       <!-- add -->
       <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-        
       <?php $images = get_images($item->id);
-      $count = 0;
-      ?>
-        <img src="<?php echo base_url('assets/images/h01.jpg'); ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-
+        // Check if $images is not empty and is an array
+        if (!empty($images) && is_array($images)) {
+            foreach ($images as $image) {
+                ?>
+                <img src="<?php echo base_url('add_images/') . $image->fImage; ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
+                <?php
+            }
+        }
+        ?>
       </div>
 
       <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
@@ -161,24 +167,21 @@
           </div>
         </div> -->
         <!-- new badge -->
-        
+
         <div class="rounded shadow p-4" style="background-color: #eeeeee;">
           <!-- <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p> -->
           <h1 class="sub_heading mb-3"><?php echo $item->vTopic; ?></h1>
-          <p class="mb-1">Beds:<?php echo $item->vBedType;?></p>
+          <p class="mb-1">Beds: <?php echo $item->vBedType;?></p>
           <p class="mb-1">Baths: <?php echo $item->vBathroom;?></p>
-          <p class="mb-1">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-          <</p>
+          <p class="mb-1"><?php echo $item->	vFacility;?></p>
           <h1 class="heading mb-1" data-aos="fade-up">Rs <?php echo $item->vPayment;?> / Month</h1>
-          <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+          <a href="<?php echo base_url('add-detail/'.$item->id); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
         </div> 
 
       </div>
-      <!-- add -->
-
+  <!----------add------------>
     </div>
-<?php }} ?>
+    <?php }} ?>
 <!-- ========================= -->
 <!-- ========================= -->
 
@@ -211,8 +214,9 @@
 <div class="clearfix"></div>
 <br>
 <br>
+<!-----------------------addvertisement display------------------------------------------------------>
 
-<!-- banner section -->
+<!------------------------banner section------------------------------->
 <div class="container">
 
 <div class="row">
@@ -228,7 +232,7 @@
 </div>
 
 </div>
-<!-- banner section -->
+<!--------------------banner section---------------------------------->
 
 <div class="clearfix"></div>
 <br>
@@ -323,80 +327,7 @@
 
 <div class="clearfix"></div>
 <br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 <!--=============================================-->
-
-<!-------- JavaScript to initialize Google Maps autocomplete and update hidden inputs -->
-    <script>
-      var searchInput = document.getElementById('search_input');
-      var selectedLatitudeInput = document.getElementById('user_latitude');
-      var selectedLongitudeInput = document.getElementById('user_longitude');
-        
-      var autocomplete = new google.maps.places.Autocomplete(searchInput, {
-        types: ['geocode', 'establishment']
-      });
-
-      autocomplete.addListener('place_changed', function () {
-        var place = autocomplete.getPlace();
-        if (place.geometry && place.geometry.location) {
-          selectedLatitudeInput.value = place.geometry.location.lat();
-          selectedLongitudeInput.value = place.geometry.location.lng();
-        }
-      });
-    </script>
-<!-- ----------------------------------------------------------------------------------->
-<!-------- JavaScript to calculate distance-------------------------------------------->
-<script>
-        function getData() {
-          // alert("Thiyuni");
-
-        // Retrieve the user_latitude and user_longitude values
-            var destLat = parseFloat(document.getElementById('user_latitude').value);
-            var destLon = parseFloat(document.getElementById('user_longitude').value);
-            alert(destLat);
-            alert(destLon);
-            // Make an AJAX request to fetch the locations data
-            $.ajax({
-            url: '<?= base_url('Home/getLocationsData') ?>', // Adjust the URL to match your route
-            type: 'GET',
-            success: function(response) {
-                // Iterate through the locations data and calculate distance
-                response.forEach(function(location) {
-                    var originLat = location.dLatitude;
-                    var originLon = location.dLongitude;
-                    var topic = location.vTopic;
-
-                // Call a function to calculate distance using retrieved data
-                    calculateDistanceWithGoogleMapsAPI(originLat, originLon, destLat, destLon, topic);
-                });
-            },
-            error: function(xhr, status, error) {
-                console.log('Error fetching locations data:', error);
-            }
-        });
-    }
-
-        function calculateDistanceWithGoogleMapsAPI(originLat, originLon, destLat, destLon, topic) {
-            var origin = new google.maps.LatLng(originLat, originLon);
-            var destination = new google.maps.LatLng(destLat, destLon);
-            
-            var service = new google.maps.DistanceMatrixService();
-            service.getDistanceMatrix(
-                {
-                    origins: [origin],
-                    destinations: [destination],
-                    travelMode: 'DRIVING',
-                    unitSystem: google.maps.UnitSystem.METRIC
-                },
-                function(response, status) {
-                    if (status === 'OK') {
-                        var distance = response.rows[0].elements[0].distance.text;
-                        $('#distance-container').append('<p>Distance '+ topic +' : ' + distance + '</p>'); //'+topic+' --> topic var concatinate with text
-                    } else {
-                        console.log("Error: " + status);
-                    }
-                }
-            );
-}
-
-    </script>

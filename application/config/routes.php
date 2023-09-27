@@ -59,6 +59,7 @@ $route['sign-up'] = 'Sign_up';
 $route['forgot-password'] = 'Forgot_password';
 $route['thank-you'] = 'Thank_you';
 $route['add-detail'] = 'Add_detail';
+$route['add-detail/(:num)'] = 'Add_detail/add_details'; //add detail page route with page id
 $route['post-add'] = 'Post_add';
 $route['posted-add'] = 'Posted_add';
 $route['my-fav'] = 'My_fav';
