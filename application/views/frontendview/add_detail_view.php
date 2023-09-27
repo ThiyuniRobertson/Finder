@@ -82,7 +82,7 @@
 
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
               <p class="mb-0"><b>Chat</b></p>
-              <a href=""><img src="assets/images/chat.png" alt="" width="40px;"></a>
+              <a href=""><img src="<?php echo base_url('assets/images/chat.png'); ?>" alt="" width="40px;"></a>
             </div>
 
             <p class="mb-1">Beds:<?php echo $add_detail->vBedType;?></p>
@@ -95,11 +95,11 @@
             <h1 class="heading mb-3" data-aos="fade-up">Rs <?php echo $add_detail->vPayment;?> / Month</h1>
 
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-up">
-              <button type="button" class="btn btn-primary magenta_btn mb-3 w-100" style="height: 55px; text-transform: uppercase;"> <img src="assets/images/fav.png" width="30px;"> &nbsp; Add to favorite</button>
+              <button type="button" class="btn btn-primary magenta_btn mb-3 w-100" style="height: 55px; text-transform: uppercase;"> <img src="<?php echo base_url('assets/images/fav.png'); ?> " width="30px;"> &nbsp; Add to favorite</button>
             </div>
 
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-up">
-              <button type="button" class="btn btn-primary magenta_btn mb-3 w-100"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 55px; text-transform: uppercase;"> <img src="assets/images/booking.png" width="30px;"> &nbsp; Book Now</button>
+              <button type="button" class="btn btn-primary magenta_btn mb-3 w-100"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 55px; text-transform: uppercase;"> <img src="<?php echo base_url('assets/images/booking.png'); ?>" width="30px;"> &nbsp; Book Now</button>
             </div>
 
             <div class="clearfix"></div>
@@ -357,7 +357,8 @@
       <!-- ========================= -->
 
        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" data-aos="fade-up">
-          <button type="button" class="btn btn-primary green_btn mb-3" style="height: 55px;">VIEW ALL</button>
+       <a href="<?php echo base_url('/'); ?>" >
+        <button type="button" class="btn btn-primary green_btn mb-3" style="height: 55px;">VIEW ALL</button></a>
         </div>
 
 

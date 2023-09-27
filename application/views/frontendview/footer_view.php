@@ -267,13 +267,45 @@
                 function(response, status) {
                     if (status === 'OK') {
                         var distance = response.rows[0].elements[0].distance.text;
-                        $('#distance-container').append('<p>Distance '+ topic +' : ' + distance + '</p>'); //'+topic+' --> topic var concatinate with text
+                        filterAdvertisements();
+                        // $('#distance-container').append('<p>Distance '+ topic +' : ' + distance + '</p>'); //'+topic+' --> topic var concatinate with text
                     } else {
                         console.log("Error: " + status);
                     }
                 }
             );
 }
+
+function filterAdvertisements() {
+    var destLat = parseFloat(document.getElementById('user_latitude').value);
+    var destLon = parseFloat(document.getElementById('user_longitude').value);
+
+    // Iterate through all advertisements
+    <?php if (!empty($all_data)) { ?>
+        <?php foreach ($all_data as $item) { ?>
+            var originLat = <?php echo $item->dLatitude; ?>;
+            var originLon = <?php echo $item->dLongitude; ?>;
+            var topic = "<?php echo $item->vTopic; ?>";
+
+            // Calculate distance using calculateDistanceWithGoogleMapsAPI function (as shown in your previous code)
+            calculateDistanceWithGoogleMapsAPI(originLat, originLon, destLat, destLon, topic, function(distance) {
+                // Check if the distance is less than 5km
+                if (distance < 5000) {
+                    // Show the advertisement by removing the "hidden" class
+                    document.querySelectorAll('.advertisement').forEach(function (ad) {
+                        ad.classList.remove('hidden');
+                    });
+                } else {
+                    // Hide the advertisement by adding the "hidden" class
+                    document.querySelectorAll('.advertisement').forEach(function (ad) {
+                        ad.classList.add('hidden');
+                    });
+                }
+            });
+        <?php } ?>
+    <?php } ?>
+}
+
 
     </script>
 

@@ -15,4 +15,16 @@ if (!function_exists('get_images'))
    }
 
 }
+
+if (!function_exists('get_myadds'))
+{
+   function get_myadds($id) {
+    $ci =& get_instance();
+    $ci->load->database();
+    $sql = " SELECT * FROM tbl_advertisement where vOwner='$id'";
+    $q = $ci->db->query($sql);
+    return $q->result();
+   }
+
+}
 ?>

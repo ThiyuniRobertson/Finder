@@ -18,158 +18,72 @@
         
       </div>
       
-      <div class="row">
+      <!-- <div class="row"> -->
         
         <!-- add -->
-         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
+         <!-- <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
            <img src="assets/images/h01.jpg" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-         </div>
+         </div> -->
 
-         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
+         <!-- <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5"> -->
 
           <!-- new badge -->
-          <div class="position-relative">
+          <!-- <div class="position-relative">
             <div class="position-absolute top-0 end-0" style="top: 15px !important; right: 15px !important;">
               <button type="button" class="btn btn-primary blue_btn" style="cursor: inherit;">NEW</button>
             </div>
-          </div>
+          </div> -->
           <!-- new badge -->
 
-           <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-            <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-            <h1 class="sub_heading mb-3"><?php echo $content->vTopic; ?></h1>
-            <p class="mb-1">Beds: 2, Baths: 1</p>
-            <p class="mb-1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-            </p>
-            <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-            <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="assets/images/arrow.png"></a>
-           </div> 
-
-         </div>
-        <!-- add -->
-
-      </div>
-
-      <!-- ========================= -->
-      <!-- ========================= -->
-
+      <?php $id = $this->session->userdata('id');?>
+      <?php $all_data = get_myadds($id) ?>
+        <?php if(!empty($all_data)) {foreach($all_data as $item) { ?>
+    
       <div class="row">
-        
+      
         <!-- add -->
-         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-           <img src="assets/images/h02.jpg" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-         </div>
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
+        <?php $images = get_images($item->id);
+          // Check if $images is not empty and is an array
+          if (!empty($images) && is_array($images)) {
+              foreach ($images as $image) {
+                  ?>
+                  <img src="<?php echo base_url('add_images/') . $image->fImage; ?>" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
+                  <?php
+              }
+          }
+        ?>
+        </div>
 
-         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-           <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-             
-            <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-            <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-            <p class="mb-1">Beds: 2, Baths: 1</p>
-            <p class="mb-1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-            </p>
-            <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-            <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="assets/images/arrow.png"></a>
-           </div> 
-         </div>
-        <!-- add -->
-
-      </div>
-
-      <!-- ========================= -->
-      <!-- ========================= -->
-
-      <div class="row">
-        
-        <!-- add -->
-         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-           <img src="assets/images/h03.jpg" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-         </div>
-
-         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
+        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
 
           <!-- new badge -->
-          <div class="position-relative">
+          <!-- <div class="position-relative">
             <div class="position-absolute top-0 end-0" style="top: 15px !important; right: 15px !important;">
               <button type="button" class="btn btn-primary blue_btn" style="cursor: inherit;">NEW</button>
             </div>
-          </div>
+          </div> -->
           <!-- new badge -->
 
-           <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-            <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-            <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-            <p class="mb-1">Beds: 2, Baths: 1</p>
-            <p class="mb-1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-            </p>
-            <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-            <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="assets/images/arrow.png"></a>
-           </div> 
+          <div class="rounded shadow p-4" style="background-color: #eeeeee;">
+            <!-- <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p> -->
+            <h1 class="sub_heading mb-3"><?php echo $item->vTopic; ?></h1>
+            <p class="mb-1">Beds: <?php echo $item->vBedType;?></p>
+            <p class="mb-1">Baths: <?php echo $item->vBathroom;?></p>
+            <p class="mb-1"><?php echo $item->	vFacility;?></p>
+            <h1 class="heading mb-1" data-aos="fade-up">Rs <?php echo $item->vPayment;?> / Month</h1>
+            <!-- <p class="mb-1">DIstance to your selected Destination:  </p> -->
+            <a href="<?php echo base_url('add-detail/'.$item->id); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
+            </div> 
 
-         </div>
-        <!-- add -->
-
+        </div>
+    <!----------add------------>
       </div>
-
-      <!-- ========================= -->
-      <!-- ========================= -->
-
-      <div class="row">
-        
-        <!-- add -->
-         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-           <img src="assets/images/h04.jpg" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-         </div>
-
-         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-           <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-             
-            <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-            <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-            <p class="mb-1">Beds: 2, Baths: 1</p>
-            <p class="mb-1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-            </p>
-            <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-            <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="assets/images/arrow.png"></a>
-           </div> 
-         </div>
-        <!-- add -->
-
-      </div>
-
-      <!-- ========================= -->
-      <!-- ========================= -->
-
-      <div class="row">
-        
-        <!-- add -->
-         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-           <img src="assets/images/h05.jpg" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">
-         </div>
-
-         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
-           <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-             
-            <p class="fst-italic mb-1">Posted on 19 Feb, Kurunegala City, Kurunegala</p>
-            <h1 class="sub_heading mb-3">Rooms to rent in kurunegala Lake round - Ladies only</h1>
-            <p class="mb-1">Beds: 2, Baths: 1</p>
-            <p class="mb-1">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..
-            </p>
-            <h1 class="heading mb-1" data-aos="fade-up">Rs 15,000.00 / Month</h1>
-            <a href="<?php echo base_url('add-detail'); ?>" class="a_link">Read More <img src="assets/images/arrow.png"></a>
-           </div> 
-         </div>
-        <!-- add -->
-
-      </div>
-
-      <!-- ========================= -->
-      <!-- ========================= -->
+      <?php }}else {
+      echo 'No advertisements available.';
+  } ?>
+<!--------------=========================--------------->
+<!--------------=========================--------------->
 
 
       <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">

@@ -12,13 +12,15 @@
 
 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12">
 
+<?php if($this->session->userdata('id')){;?>
+
   <h1 class="heading aos-init aos-animate" data-aos="fade-up">
     ACCOUNT
   </h1>
   
   <a href="">
     <div class="left_side_btn_div">
-      Hi...Sanjeewa
+      Hi...<?php echo $this->session->userdata('vFname');?>
     </div>
   </a>
 
@@ -72,14 +74,12 @@
 
   <!-- ============== -->
 
-
-
 </div>
 
 <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-8 col-sm-8 col-12">
   
   <h1 class="heading aos-init aos-animate" data-aos="fade-up">
-   Welcome Sanjeewa Athauda
+   Welcome <?php echo $this->session->userdata('vFname');?>
   </h1>
 
   <h1 class="sub_heading aos-init aos-animate" data-aos="fade-up">
@@ -90,56 +90,56 @@
     
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="Sanjewa">
+        <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="<?php echo $this->session->userdata('vFname');?>">
         <label for="floatingInputValue">First Name</label>
       </div>
     </div>
 
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="Athauda">
+        <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="<?php echo $this->session->userdata('vLname');?>">
         <label for="floatingInputValue">Last Name</label>
       </div>
     </div>
 
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="Koswatta, Nawala, Sri Lanka.">
+        <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com">
         <label for="floatingInputValue">Address</label>
       </div>
     </div>
 
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="Nawala">
-        <label for="floatingInputValue">City</label>
+        <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="<?php echo $this->session->userdata('vProvince');?>">
+        <label for="floatingInputValue">Province</label>
       </div>
     </div>
 
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="Colombo">
+        <input type="text" class="form-control" id="floatingInputValue" placeholder="Colombo" value="<?php echo $this->session->userdata('vDistrict');?>">
         <label for="floatingInputValue">District</label>
       </div>
     </div>
 
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="+94 775 235 986">
+        <input type="text" class="form-control" id="floatingInputValue" placeholder="011-1234567" value="<?php echo $this->session->userdata('vContactNum');?>">
         <label for="floatingInputValue">Phone Number</label>
       </div>
     </div>
 
-    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
+    <!-- <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
         <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="+94 775 235 986">
         <label for="floatingInputValue">Mobile Number</label>
       </div>
-    </div>
+    </div> -->
 
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="sanjeewa@testing.com">
+        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="<?php echo $this->session->userdata('vEmail');?>">
         <label for="floatingInputValue">Email</label>
       </div>
     </div>
@@ -154,6 +154,7 @@
 
   </div>
 
+  <?php } ?>
   <!-- ================= -->
 
   <h1 class="sub_heading aos-init aos-animate" data-aos="fade-up">

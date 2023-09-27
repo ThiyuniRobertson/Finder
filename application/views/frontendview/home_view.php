@@ -245,8 +245,8 @@
 <!-- partners section -->
 
 
-<!-- logo slider  -->
-<div class="container" data-aos="fade-down">
+<!-----------------------------Top search slider--------------------->
+<!-- <div class="container" data-aos="fade-down">
   <h1 class="heading"  style="text-transform: uppercase; color: #000000; text-align: center;">Most searched</h1>
   <p style="text-align: center;">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
@@ -318,9 +318,9 @@
               </div>
           </div>
       </div>
-</div>
+</div> -->
 
-<!-- logo slider -->
+<!-----------------------------Top search slider--------------------->
 
 
 <!-- partners section -->

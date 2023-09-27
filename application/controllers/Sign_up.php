@@ -46,6 +46,10 @@ class Sign_up extends CI_Controller {
                     'id' => $user->id,
                     'vEmail' => $user->vEmail,
                     'vFname' => $user->vFname,
+                    'vLname' => $user->vLname,
+                    'vContactNum' => $user->vContactNum,
+                    'vProvince' => $user->vProvince,
+                    'vDistrict' => $user->vDistrict,
                     //'logged_in' => true
                 );
                 // var_dump($user_data);die();
