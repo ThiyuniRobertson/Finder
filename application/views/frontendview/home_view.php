@@ -175,13 +175,16 @@
           <p class="mb-1">Baths: <?php echo $item->vBathroom;?></p>
           <p class="mb-1"><?php echo $item->	vFacility;?></p>
           <h1 class="heading mb-1" data-aos="fade-up">Rs <?php echo $item->vPayment;?> / Month</h1>
+          <!-- <p class="mb-1">DIstance to your selected Destination:  </p> -->
           <a href="<?php echo base_url('add-detail/'.$item->id); ?>" class="a_link">Read More <img src="<?php echo base_url('assets/images/arrow.png'); ?>"></a>
         </div> 
 
       </div>
   <!----------add------------>
     </div>
-    <?php }} ?>
+    <?php }}else {
+    echo 'No advertisements available.';
+} ?>
 <!-- ========================= -->
 <!-- ========================= -->
 

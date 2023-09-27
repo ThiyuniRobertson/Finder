@@ -9,7 +9,7 @@ class Home_model extends CI_Model {
       // var_dump("test");exit();
       $this->db->from('tbl_advertisement');
       // $this->db->where('id',1);
-      $this->db->order_by('id','asc');
+      $this->db->order_by('id','desc');
       $query = $this->db->get();
       // echo $this->db->last_query();exit();
       if($query->num_rows() > 0) {
@@ -31,8 +31,17 @@ class Home_model extends CI_Model {
   }
 //Get the data from database
   public function getLocationsFromDatabase() {
-      $query = $this->db->get('tbl_advertisement');
+    $this->db->from('tbl_advertisement');
+    // $this->db->where('id',1);
+    $this->db->order_by('id','desc');
+    $query = $this->db->get();
+    // echo $this->db->last_query();exit();
+    if($query->num_rows() > 0) {
       return $query->result();
+    }
+    else {
+      return array();
+    }
   }
 
   public function calculateDistanceWithGoogleMapsAPI($originLat, $originLon, $destLat, $destLon, $topic) {

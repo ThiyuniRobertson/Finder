@@ -35,11 +35,10 @@ class Add_detail extends CI_Controller {
         
         $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages($id);
         // var_dump( $data['add_detail'] );exit();
-        // $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages();
-        // $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages();
-        // $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages($id);
-        // $data['add_detail'] = $this->post_add_model->getAdvertisementDetailsWithImages($id);
-       
+        $data['add_images'] = $this->post_add_model->getAddImages($id);
+        $data['image_count'] = $this->post_add_model->countAddImages($id);
+        //    var_dump( $data['add_images'] );exit();
+        $data['all_data'] = $this->post_add_model->getLocationsFromDatabase($id);
         
         $this->load->view('frontendview/header_view');
         $this->load->view('frontendview/add_detail_view',$data);

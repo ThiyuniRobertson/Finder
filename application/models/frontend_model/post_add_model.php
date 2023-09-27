@@ -65,28 +65,83 @@ class post_add_model extends CI_Model {
     }
 //getting add details from tbl_advertisment table and it pass 
     public function getAdvertisementDetailsWithImages($id) {
-        $this->db->select('*');
+        $this->db->select('tbl_advertisement.*, tbl_add_images.fImage'); // Replace tbl_add_images.* with the specific image_url column you want to retrieve
         $this->db->from('tbl_advertisement');
-        $this->db->where('tbl_advertisement.id', $id);
-
+        
         // Join with tbl_add_images based on id
-        // $this->db->join('tbl_add_images', 'tbl_advertisement.id = tbl_add_images.iAddID');
-
+        $this->db->join('tbl_add_images', 'tbl_advertisement.id = tbl_add_images.iAddID');
+        
+        // Add a WHERE condition to filter by advertisement ID
+        $this->db->where('tbl_advertisement.id', $id);
+        
         // Execute the query
         $result = $this->db->get();
-
+        
         // Return the result
         if ($result->num_rows() > 0) {
             return $result->row();
+        } else {
+            return null; // You can return null instead of an empty array if no results are found
+        }
+    }
+
+    public function getAddImages($id) {
+        // echo $id;exit();
+        $this->db->select('*'); 
+        $this->db->from('tbl_add_images');
+        $this->db->where('iAddID',$id);
+        
+        // Execute the query
+        $query = $this->db->get();
+       
+        
+        // Return the result
+        if ($query->num_rows() > 0) {
+            // echo $this->db->last_query();exit();
+            return $query->result();
+        } else {
+            // echo "no";exit();
+            return array();
+        }
+    }
+
+    public function countAddImages($id) {
+        $this->db->select('COUNT(*) as total_images'); // Use COUNT(*) to count records and alias it as 'total_images'
+        $this->db->from('tbl_add_images');
+        $this->db->where('iAddID', $id);
+        
+        // Execute the query
+        $query = $this->db->get();
+        
+        // Return the result
+        if ($query->num_rows() == 1) {
+            $result = $query->row();
+            return $result->total_images;
+        } else {
+            return 0; // Return 0 if no records are found
+        }
+    }
+
+    public function getLocationsFromDatabase($id) {
+        $this->db->select('*'); 
+        $this->db->from('tbl_advertisement');
+        $this->db->where('id !=', $id); // Use '!=' instead of '!='
+        $this->db->order_by('id', 'desc'); // Replace 'column_name' with the actual column name
+        $this->db->limit(3);
+
+        // Execute the query
+        $query = $this->db->get();
+
+        // echo $this->db->last_query(); // You can keep this for debugging, but remove the 'exit()'
+
+        // Return the result
+        if ($query->num_rows() > 0) {
+            return $query->result();
         } else {
             return array();
         }
     }
 
-// }
-  // else {
-  //   
-// }
 
 
 }
