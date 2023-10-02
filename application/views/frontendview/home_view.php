@@ -97,6 +97,7 @@
 
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <button type="button" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;" onClick="getData();"> SEARCH NOW</button>
+              <!-- <a href="#"><button type="button" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;"> SEARCH NOW</button></a> -->
             </div>
          
           </div>
@@ -139,6 +140,7 @@
   </div>
   
 </div>
+<!-- <div id="all_details"> -->
 
 <?php if(!empty($all_data)) {foreach($all_data as $item) { ?>
     
@@ -180,11 +182,14 @@
         </div> 
 
       </div>
-  <!----------add------------>
+      <!----------add------------>
     </div>
     <?php }}else {
     echo 'No advertisements available.';
 } ?>
+
+<!-- </div> -->
+<!-- <div id="result_details"></div> -->
 <!-- ========================= -->
 <!-- ========================= -->
 

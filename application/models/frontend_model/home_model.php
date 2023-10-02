@@ -62,5 +62,34 @@ class Home_model extends CI_Model {
       }
   }
 
+  public function getDetailsById($id){
+    // var_dump("test");exit();
+    $this->db->from('tbl_advertisement');
+    $this->db->where('id',$id);
+    $this->db->order_by('id','desc');
+    $query = $this->db->get();
+    // echo $this->db->last_query();exit();
+    if($query->num_rows() > 0) {
+      return $query->row();
+    }
+    else {
+      return array();
+    }
+  }
+
+  public function getDetailsImageById($id){
+    // var_dump("test");exit();
+    $this->db->from('tbl_add_images');
+    $this->db->where('iAddID',$id);
+    $query = $this->db->get();
+    // echo $this->db->last_query();exit();
+    if($query->num_rows() > 0) {
+      return $query->row();
+    }
+    else {
+      return array();
+    }
+  }
+
 }
 ?>

@@ -92,14 +92,14 @@
 
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
         <div class="form-floating mb-3" data-aos="fade-up">
-          <input type="text" class="form-control" id="latitude" name="latitude" />
+          <input type="hidden" class="form-control" id="latitude" name="latitude" />
            <!-- <label for="floatingInput" class="form-control-label col-sm-2">Latitude</label> -->
         </div>
       </div>
 
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
         <div class="form-floating mb-3" data-aos="fade-up">
-          <input type="text" class="form-control" id="longitude" name="longitude"/>
+          <input type="hidden" class="form-control" id="longitude" name="longitude"/>
           <!-- <label for="floatingInput">Longitude</label> -->
         </div>
       </div>

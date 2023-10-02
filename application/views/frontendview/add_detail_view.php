@@ -13,6 +13,7 @@
 
           <!-- slider -->
           <div class="carousel-inner">
+            
               <?php 
               // var_dump($add_images);exit();
                 $count = 0;
@@ -82,7 +83,7 @@
 
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
               <p class="mb-0"><b>Chat</b></p>
-              <a href=""><img src="<?php echo base_url('assets/images/chat.png'); ?>" alt="" width="40px;"></a>
+              <a href="tel:077 8 659 659"><img src="<?php echo base_url('assets/images/chat.png'); ?>" alt="" width="40px;"></a>
             </div>
 
             <p class="mb-1">Beds:<?php echo $add_detail->vBedType;?></p>
@@ -104,11 +105,12 @@
 
             <div class="clearfix"></div>
             <br>
-
+                      </div>
              <h1 class="sub_heading mb-4" data-aos="fade-up">Location</h1>
 
              <!-- map -->
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31691.028884033945!2d79.98561835659727!3d6.845134121702999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2518e99e2ee8d%3A0xc3eebfdbc86273ee!2sHomagama!5e0!3m2!1sen!2slk!4v1684512367627!5m2!1sen!2slk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+             <div id="googleMap">
+             <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31691.028884033945!2d79.98561835659727!3d6.845134121702999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2518e99e2ee8d%3A0xc3eebfdbc86273ee!2sHomagama!5e0!3m2!1sen!2slk!4v1684512367627!5m2!1sen!2slk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
              <!-- map -->
             
 <!--------------------Location detail--------------------------------------------->
@@ -201,8 +203,6 @@
               </div>
             </div>
 
-            <div class="clearfix"></div>
-
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
               <div class="form-floating mb-3">
                 <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="10 Digit Mobile No">
@@ -227,7 +227,6 @@
 
             </div>
           </div>
-  
     </div>
   </div>
 </div>
@@ -235,6 +234,9 @@
 <div class="clearfix"></div>
     <br>
     <br>
+
+    </div>
+
 <!---------------------More add---------------------------------------->
     <div class="container">
 
@@ -291,7 +293,7 @@
         <!-- add -->
 
         <!--------------========================= -->
-<!--------------========================= -->
+  <!--------------========================= -->
 
       <!-- <div class="row"> -->
         
@@ -396,6 +398,70 @@
     <!--=============================================-->
   <!--===================body====================-->
   
-      <script src="<?php echo base_url('assets/js/jquery-3.2.1.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/js/jquery-3.2.1.min.js'); ?>"></script>
       <script src="<?php echo base_url('assets/js/popper.min.js'); ?>" ></script> 
       <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>" ></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AZeJwG7AYyT3Fr7_kI2BnV3_y9SbK7s&libraries=places"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <script>
+            //javascript.js
+            //set map options
+            var myLatLng = { lat:6.976, lng:79.919};
+            var destination = {lat: 6.975, lng:80.031}
+            var mapOptions = {
+                center: myLatLng,
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            //create map
+            var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+
+            //create a DirectionsService object to use the route method and get a result for our request
+            var directionsService = new google.maps.DirectionsService();
+
+            //create a DirectionsRenderer object which we will use to display the route
+            var directionsDisplay = new google.maps.DirectionsRenderer();
+
+            //bind the DirectionsRenderer to the map
+            directionsDisplay.setMap(map);
+
+
+            //define calcRoute function
+            function calcRoute() {
+                //create request
+                var request = {
+                    origin: myLatLng.value,
+                    destination: destination.value,
+                    travelMode: google.maps.TravelMode.DRIVING, //WALKING, BYCYCLING, TRANSIT
+                    unitSystem: google.maps.UnitSystem.METRIC //mETRIC = km & IMPIRIAL = miles
+                }
+
+            //pass the request to the route method
+            directionsService.route(request, function (result, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+
+                    //Get distance and time
+                    const output = document.querySelector('#output');
+                    output.innerHTML = "<div class='alert-info'>From: " + myLatLng.value + ".<br />To: " + destination.value + 
+                    ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + 
+                    result.routes[0].legs[0].duration.text + ".</div>";
+
+                    //display route
+                    directionsDisplay.setDirections(result);
+                } else {
+                    //delete route from map
+                    directionsDisplay.setDirections({ routes: [] });
+                    //center map in London
+                    map.setCenter(myLatLng);
+
+                    //show error message
+                    output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
+                }
+            });
+
+        }
+           
+    </script>

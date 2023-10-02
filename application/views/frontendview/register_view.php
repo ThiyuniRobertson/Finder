@@ -136,10 +136,15 @@
                   <div class="form-floating mb-3">
                     <select class="form-select" id="province" name="province" aria-label="Floating label select example">
                       <option selected> </option>
-                      <option value="Western">Western</option>
-                      <option value="South">South</option>
-                      <option value="Centrel">Centrel</option>
-                      <option value="North">North</option>
+                      <option value="Western">Central</option>
+                      <option value="North">Eastern</option>
+                      <option value="North">Northern</option>
+                      <option value="South">North Central</option>
+                      <option value="North">North Western</option>
+                      <option value="North">Sabaragamuwa	</option>
+                      <option value="North">Southern</option>
+                      <option value="Centrel">Uva</option>
+                      <option value="North">Western</option>
                     </select>
                     <label for="floatingSelectGrid">Province</label>
                   </div>
@@ -150,9 +155,8 @@
                     <select class="form-select" id="district" name="district" aria-label="Floating label select example">
                       <option selected> </option>
                       <option Value="Colombo">Colombo</option>
-                      <option value="Kandy">Kandy</option>
-                      <option value="Galle">Galle</option>
-                      <option value="Matale">Matale</option>
+                      <option value="Kandy">Kaluthara</option>
+                      <option value="Galle">Gampaha</option>
                     </select>
                     <label for="floatingSelectGrid">District</label>
                   </div>
