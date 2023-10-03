@@ -181,21 +181,22 @@
       </div>
       <div class="modal-body">
           <div class="row">
-
-            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+          <form method="post"  id="book_now_form">
+            
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="fname" name="fname" placeholder="First name">
                 <label for="floatingInput">First Name*</label>
               </div>
             </div>
 
-            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name">
                 <label for="floatingInput">Last Name*</label>
               </div>
             </div>
-
+            <div class="row">
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
               <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
@@ -209,7 +210,7 @@
                 <label for="floatingInput">Contact Number*</label>
               </div>
             </div>  
-
+            </div>
             <div class="clearfix"></div>
 
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -224,20 +225,35 @@
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <button type="submit" id="butregister" name="butregister" class="btn btn-primary green_btn" style="width: 100%; font-weight: 900; height: 55px;"><span class="align-middle">BOOK NOW</span></button>
             </div>
-
+            </form>
             </div>
           </div>
     </div>
   </div>
 </div>
 <!------------------------booking Modal--------------------------------->
-<div class="clearfix"></div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Your booking has been submitted successfully.</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="clearfix"></div>
     <br>
     <br>
 
     </div>
 
-<!---------------------More add---------------------------------------->
+    <!---------------------More add---------------------------------------->
     <div class="container">
 
       <div class="row">
@@ -463,5 +479,31 @@
             });
 
         }
+
+        $(document).ready(function() {
+          // Listen for the form submission event
+          $('#book_now_form').submit(function(event) {
+              event.preventDefault(); // Prevent the default form submission
+
+              // Serialize the form data
+              var formData = $(this).serialize();
+
+              $.ajax({
+                  type: 'POST',
+                  url: '<?= base_url('Add_detail/submitForm') ?>', // Adjust the URL to match your route
+                  data: formData,
+                  dataType: 'json', // Expect JSON response from the server
+                  success: function(response) {
+                      // Check if the response contains an "email" property (indicating success)
+                      $('#exampleModal').modal('hide');
+                      $('#successModal').modal('show');
+                  },
+                  error: function(xhr, status, error) {
+                      // Handle AJAX errors here
+                      alert('AJAX Error: ' + error);
+                  }
+              });
+          });
+      });
            
     </script>

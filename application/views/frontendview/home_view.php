@@ -28,36 +28,37 @@
           <!---------------------------------------------------->
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
-                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                <select class="form-select" id="room_type" name="room_type" aria-label="Floating label select example">
                   <option selected></option>
-                  <option value="1">AC</option>
-                  <option value="2">Non AC</option>
+                  <option value="Non-AC">Non-AC</option>
+                  <option value="AC">AC</option>
                 </select>
-                <label for="floatingSelectGrid">Room Type</label>
+                <label for="room_type">Room Type</label>
               </div>
             </div>
 
              <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
-                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                <select class="form-select" id="room_category" name="room_category" aria-label="Floating label select example">
                   <option selected></option>
-                  <option value="1">One Person</option>
-                  <option value="2">Two Person</option>
-                  <option value="2">Three Person</option>
-                  <option value="2">Four Person</option>
+                  <option value="One Person">One Person</option>
+                  <option value="Two Person">Two Person</option>
+                  <option value="Three Person">Three Person</option>
+                  <option value="More than three">More than three</option>
                 </select>
-                <label for="floatingSelectGrid">Room Category</label>
+                <label for="room_category">Room Category</label>
               </div>
             </div>
 
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
-                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                <select class="form-select" id="bed_type" name="bed_type" aria-label="Floating label select example">
                   <option selected></option>
-                  <option value="1">Double</option>
-                  <option value="2">Single</option>
+                  <option value="Single">Signle</option>
+                  <option value="Double">Double</option>
+                  <option value="Bunk Bed">Bunk Bed</option>
                 </select>
-                <label for="floatingSelectGrid">Preferred Bed Type</label>
+                <label for="bed_type">Preferred Bed Type</label>
               </div>
             </div>
 
@@ -75,23 +76,23 @@
 
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
-                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                <select class="form-select" id="bathroom_type" name="bathroom_type" aria-label="Floating label select example">
                   <option selected></option>
-                  <option value="1">Attached Bathroom</option>
-                  <option value="2">Shared Bathroom</option>
+                  <option value="Attached Bathroom">Attached Bathroom</option>
+                  <option value="Common Bathroom">Common Bathroom</option>
                 </select>
-                <label for="floatingSelectGrid">Type of Bathroom</label>
+                <label for="bathroom_type">Type of Bathroom</label>
               </div>
             </div>
 
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
               <div class="form-floating mb-3">
-                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                <select class="form-select" id="gender_type" name="gender_type" aria-label="Floating label select example">
                   <option selected></option>
-                  <option value="1">Female</option>
-                  <option value="2">Male</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
                 </select>
-                <label for="floatingSelectGrid">Gender</label>
+                <label for="gender_type">Gender</label>
               </div>
             </div>
 
@@ -140,7 +141,7 @@
   </div>
   
 </div>
-<!-- <div id="all_details"> -->
+<div id="all_details">
 
 <?php if(!empty($all_data)) {foreach($all_data as $item) { ?>
     
@@ -188,8 +189,8 @@
     echo 'No advertisements available.';
 } ?>
 
-<!-- </div> -->
-<!-- <div id="result_details"></div> -->
+</div>
+<div id="result_details"></div>
 <!-- ========================= -->
 <!-- ========================= -->
 

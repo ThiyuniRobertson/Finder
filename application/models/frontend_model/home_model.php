@@ -44,6 +44,39 @@ class Home_model extends CI_Model {
     }
   }
 
+  public function getFilteredLocationsFromDatabase($room_type, $room_category, $bed_type, $bathroom_type, $gender_type) {
+    $this->db->from('tbl_advertisement');
+    if($room_type != NULL)
+    {
+      $this->db->where('vRtype',$room_type);
+    }
+    if($room_category != NULL)
+    {
+      $this->db->where('vRcategory',$room_category);
+    }
+    if($bed_type != NULL)
+    {
+      $this->db->where('vBedType',$bed_type);
+    }
+    if($bathroom_type != NULL)
+    {
+      $this->db->where('vBathroom',$bathroom_type);
+    }
+    if($gender_type != NULL)
+    {
+      $this->db->where('vGender',$gender_type);
+    }
+    $this->db->order_by('id','desc');
+    $query = $this->db->get();
+    // echo $this->db->last_query();exit();
+    if($query->num_rows() > 0) {
+      return $query->result();
+    }
+    else {
+      return array();
+    }
+  }
+
   public function calculateDistanceWithGoogleMapsAPI($originLat, $originLon, $destLat, $destLon, $topic) {
       $origin = $originLat . ',' . $originLon;
       $destination = $destLat . ',' . $destLon;

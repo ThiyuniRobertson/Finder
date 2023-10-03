@@ -52,7 +52,7 @@
         <div class="form-floating mb-3" data-aos="fade-up">
           <select class="form-select" id="bedtype" name="bedtype" aria-label="Floating label select example">
           <option selected> </option>
-          <option value="Signle">Signle</option>
+          <option value="Single">Single</option>
           <option value="Double">Double</option>
           <option value="Bunk Bed">Bunk Bed</option>
           </select>

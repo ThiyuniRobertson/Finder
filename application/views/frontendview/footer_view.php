@@ -220,20 +220,107 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
 <script>
-        var propertyarray = new Array();
         var filteredData = new Array();
+        var propertyarray = new Array();
+        var locationScore;
         function getData() {
-        //   alert("Thiyuni");
+            //   alert("Thiyuni");
             // Retrieve the user_latitude and user_longitude values
                 var destLat = parseFloat(document.getElementById('user_latitude').value);
                 var destLon = parseFloat(document.getElementById('user_longitude').value);
-            //  alert(destLat);
-            //  alert(destLon);
+                var room_type = document.getElementById('room_type').value;
+                var room_category = document.getElementById('room_category').value;
+                var bed_type = document.getElementById('bed_type').value;
+                var bathroom_type = document.getElementById('bathroom_type').value;
+                var gender_type = document.getElementById('gender_type').value;
+
+                if(room_type != '')
+                {
+                    if (room_type = 'AC') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else if (room_type = 'Non-AC') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else{
+                        locationScore: 0;
+                    }
+                }
+
+                if(room_category != '')
+                {
+                    if (room_category = 'One Person') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else if (room_category = 'Two Person') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else if (room_category = 'Three Person') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else if (room_category = 'More than three') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else{
+                        locationScore: 0;
+                    }
+                }
+
+                if(bed_type != '')
+                {
+                    if (bed_type = 'Single') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else if (bed_type = 'Double') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else if (bed_type = 'Bunk Bed') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else{
+                        locationScore: 0;
+                    }
+                }
+
+                if(bathroom_type != '')
+                {
+                    if (bathroom_type = 'Attached Bathroom') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else if (bathroom_type = 'Common Bathroom') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else{
+                        locationScore: 0;
+                    }
+                }
+
+                if(gender_type != '')
+                {
+                    if (gender_type = 'Male') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else if (gender_type = 'Female') { // distance less than 1km
+                        locationScore: 10;
+                    }
+                    else{
+                        locationScore: 0;
+                    }
+                }
+                //  alert(destLat);
+                //  alert(destLon);
                 // Make an AJAX request to fetch the locations data
                 $(document).ready(function() {
                 $.ajax({
                 url: '<?= base_url('Home/getLocationsData') ?>', // Adjust the URL to match your route
-                type: 'GET',
+                type: 'POST',
+                data: { 
+                    room_type: room_type,
+                    room_category: room_category,
+                    bed_type: bed_type,
+                    bathroom_type: bathroom_type,
+                    gender_type: gender_type
+                },
                 success: function(response) {
                     // Iterate through the locations data and calculate distance
                     response.forEach(function(location) {
@@ -259,59 +346,14 @@
             });
         });
 
-            console.log(propertyarray);
-            var base_url = '<?php echo base_url(); ?>';
-            $.ajax({
-                type: "POST",
-                url: "<?php echo base_url('Home/idfromfooter'); ?>",
-                data: { inputData: propertyarray },
-                dataType: 'json',
-                success: function(response) {
-                    console.log(response);
-                    //$('#all_details').remove();
-                    //var allDetailsContainer = $('#result_details');
-
-                    // Loop through the response array and append HTML for each result
-                    // for (var i = 0; i < response.length; i++) {
-                    //     var resultItem = response[i];
-
-                    //     // Check if resultItem.image is defined
-                    //     var imageUrl = resultItem.image ? base_url + 'add_images/' + resultItem.image.fImage : '';
-
-                    //     // Create a div element to hold the result content
-                    //     // var resultDiv = $('<div class="result-item"></div>');
-
-                    //     // Create and append your HTML content for this result
-                    //     var htmlContent = '<div class="row">' +
-                    //         '<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">' +
-                    //         '<img src="' + imageUrl + '" alt="" class="d-block mx-auto w-100 rounded" data-aos="fade-down">' +
-                    //         '</div>' +
-                    //         '<div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">' +
-                    //         '<div class="rounded shadow p-4" style="background-color: #eeeeee;">' +
-                    //         '<h1 class="sub_heading mb-3">' + resultItem.details.vTopic + '</h1>' +
-                    //         '<p class="mb-1">Beds: ' + resultItem.details.vBedType + '</p>' +
-                    //         '<p class="mb-1">Baths: ' + resultItem.details.vBathroom + '</p>' +
-                    //         '<p class="mb-1">' + resultItem.details.vFacility + '</p>' +
-                    //         '<h1 class="heading mb-1" data-aos="fade-up">Rs ' + resultItem.details.vPayment + ' / Month</h1>' +
-                    //         '<a href="' + base_url + 'add-detail/' + resultItem.details.id + '" class="a_link">Read More <img src="' + base_url + 'assets/images/arrow.png"></a>' +
-                    //         '</div>' +
-                    //         '</div>' +
-                    //         '</div>';
-
-                    //         allDetailsContainer.html(response);
-                    // }
-                    
-                },
-                error: function(xhr, status, error) {
-                        console.error("Error: " + error);
-                    }
-                });
+        getLocationData();   
 
         }
 
         function calculateDistanceWithGoogleMapsAPI(originLat, originLon, destLat, destLon, topic, id) {
             var origin = new google.maps.LatLng(originLat, originLon);
             var destination = new google.maps.LatLng(destLat, destLon);
+            
             
             var service = new google.maps.DistanceMatrixService();
             service.getDistanceMatrix(
@@ -324,73 +366,45 @@
                 function(response, status) {
                     if (status === 'OK') {
                         var distance = response.rows[0].elements[0].distance.text;
+
+                        var distanceValue = parseFloat(distance.replace(' km', ''));
+                        
+                        if (distanceValue < 1) { // distance less than 1km
+                            locationScore: 50;
+                        }
+                        else if (distanceValue < 2) { // distance less than 2km
+                            locationScore: 40;
+                        }
+                        else if (distanceValue < 3) { // distance less than 3km
+                            locationScore: 30;
+                        }
+                        else if (distanceValue < 4) { // distance less than 4km
+                            locationScore: 20;
+                        }
+                        else if (distanceValue < 5) { // distance less than 5km
+                            locationScore: 10;
+                        }
+                        else{
+                            locationScore: 0;
+                        }
+
+
+
                         // console.log("Distance for " + topic + ": " + distance);
                         // console.log("Property ID: " + id);
                         // propertyarray.push(distance);
-                        var distanceValue = parseFloat(distance.replace(' km', ''));
-                        if (distanceValue < 5) { // Assuming 5000 meters is 5km
+                        
+
+                        if (distanceValue < 5) { // distance less than 5km
                             // console.log(distance);
-                            propertyarray.push(id);
-                            filteredData.push({
+                            // propertyarray.push(id);
+                            propertyarray.push({
                                 id: id,
                                 distance: distance
                             });
                         }
                         
-                        // propertyarray.push();
-                        // console.log(propertyarray);
-                        //distance eka 5km walin adu tika id eka aragena eka pass karala e id walata related details tika show karanwa
-                        // $('#distance-container').append('<p>Distance '+ topic +' : ' + distance + '</p>'); //'+topic+' --> topic var concatinate with text
-                       
-                        // var locationScore;
-                        // if (distanceValue =< 1) { // Assuming 5000 meters is 5km
-                        //     propertyarray.push(id);
-                        //     filteredData.push({
-                        //         id: id,
-                        //         di stance: distance,
-                        //         locationScore: 50
-                        //     });
-                        // }
-                        // else if (distanceValue =< 2) { // Assuming 5000 meters is 5km
-                        //     propertyarray.push(id);
-                        //     filteredData.push({
-                        //         id: id,
-                        //         di stance: distance,
-                        //         locationScore: 40
-                        //     });
-                        // }
-                        // else if (distanceValue =< 3) { // Assuming 5000 meters is 5km
-                        //     propertyarray.push(id);
-                        //     filteredData.push({
-                        //         id: id,
-                        //         di stance: distance,
-                        //         locationScore: 30
-                        //     });
-                        // }
-                        // else if (distanceValue =< 4) { // Assuming 5000 meters is 5km
-                        //     propertyarray.push(id);
-                        //     filteredData.push({
-                        //         id: id,
-                        //         di stance: distance,
-                        //         locationScore: 20
-                        //     });
-                        // }
-                        // else if (distanceValue =< 5) { // Assuming 5000 meters is 5km
-                        //     propertyarray.push(id);
-                        //     filteredData.push({
-                        //         id: id,
-                        //         di stance: distance,
-                        //         locationScore: 10
-                        //     });
-                        // }
-                        else{
-                            propertyarray.push(id);
-                            filteredData.push({
-                                id: id,
-                                di stance: distance,
-                                locationScore: 0
-                            });
-                        }
+                        
                     } else {
                         console.log("Error: " + status);
                     }
@@ -399,6 +413,85 @@
             );
 
             
+        }
+
+        function getLocationData(){
+            console.log(propertyarray);
+            var base_url = '<?php echo base_url(); ?>';
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url('Home/idfromfooter'); ?>",
+                data: { 
+                    inputData: propertyarray
+                 },
+                dataType: 'json',
+                success: function(response) {
+                    
+                    // console.log("response : " + response);
+                    $('#all_details').remove();
+                    var allDetailsContainer = $('#result_details');
+
+                    console.log(response); // This will log the entire array of objects
+        
+                    // Loop through the array and access properties of each object
+                    // for (var i = 0; i < response.length; i++) {
+                    //     var resultItem = response[i];
+                        
+                    // var htmlContent = '';
+                        
+
+                    //     // Now you can work with 'details' and 'image' as needed
+                    //     console.log("Details: ", details);
+                    //     console.log("Image: ", image);
+                        
+                    //     // Example: Append the details to a container element
+                    //     // var detailsContainer = $("#details-container");
+                    //     // detailsContainer.append("<p>" + details + "</p>");
+                    // }
+
+                    // Loop through the response array and append HTML for each result
+                    // Initialize an empty variable to accumulate HTML content
+                    var htmlContent = '';
+
+                    for (var i = 0; i < response.length; i++) {
+                        var resultItem = response[i];
+                        var details = resultItem.details;
+                        var image = resultItem.image;
+                        var distance = resultItem.distance;
+
+                        console.log("Details id: ", details.id);
+                        console.log("Image: ", image);
+
+                        // Check if resultItem.image is defined
+                        var imageUrl = image ? base_url + 'add_images/' + image.fImage : '';
+
+                        // Concatenate the HTML content for this result to the accumulator variable
+                        htmlContent += '<div class="row">' +
+                            '<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">' +
+                            '<img src="' + imageUrl + '" alt="" class="d-block mx-auto w-100 rounded" >' +
+                            '</div>' +
+                            '<div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">' +
+                            '<div class="rounded shadow p-4" style="background-color: #eeeeee;">' +
+                            '<h1 class="sub_heading mb-3">' + details.vTopic + '</h1>' +
+                            '<p class="mb-1">Distance: ' + distance + '</p>' +
+                            '<p class="mb-1">Beds: ' + details.vBedType + '</p>' +
+                            '<p class="mb-1">Baths: ' + details.vBathroom + '</p>' +
+                            '<p class="mb-1">' + details.vFacility + '</p>' +
+                            '<h1 class="heading mb-1" data-aos="fade-up">Rs ' + details.vPayment + ' / Month</h1>' +
+                            '<a href="' + base_url + 'add-detail/' + details.id + '" class="a_link">Read More <img src="' + base_url + 'assets/images/arrow.png"></a>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+
+                    // After the loop, append the accumulated HTML content to the container
+                    allDetailsContainer.html(htmlContent);
+
+                },
+                error: function(xhr, status, error) {
+                        console.error("Error: " + error);
+                    }
+                });
         }
         
 

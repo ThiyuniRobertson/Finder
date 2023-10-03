@@ -50,8 +50,20 @@ class Home extends CI_Controller {
     }
 
     public function getLocationsData() {
-    // Fetch your locations data (replace this with your actual logic)
-        $locationsData = $this->Home_model->getLocationsFromDatabase();
+        // Retrieve the POST data using CodeIgniter's input class
+        $room_type = $this->input->post('room_type');
+        $room_category = $this->input->post('room_category');
+        $bed_type = $this->input->post('bed_type');
+        $bathroom_type = $this->input->post('bathroom_type');
+        $gender_type = $this->input->post('gender_type');
+        // echo($room_type);die();
+        // Now you have access to the data sent from the view
+        // You can use these variables in your logic
+
+        // Example: Fetch your locations data based on the received parameters
+        $locationsData = $this->Home_model->getFilteredLocationsFromDatabase($room_type, $room_category, $bed_type, $bathroom_type, $gender_type);
+
+        // $locationsData = $this->Home_model->getFilteredLocationsFromDatabase();
         // echo($locationsData);die();
         
     // Return the data as JSON
@@ -60,46 +72,73 @@ class Home extends CI_Controller {
     }
 	 
     public function idfromfooter() {
-        // // Retrieve the data sent from the view
-        // $inputData = $this->input->post('inputData');
-        // echo '<pre>';
-        // var_dump($inputData);
-        // echo '</pre>';
-        // // Process the data or perform any other actions
-        // // ...
-    
-        // // Return a response (e.g., JSON response)
-        // $response = array('message' => 'Data received successfully');
-        // echo json_encode($response);
-        // $('#div_id').remove();
+        $resultArray = array(); // Initialize an empty array to store results
+        // $resultItem = array();
         if ($this->input->is_ajax_request()) {
             $inputData = $this->input->post('inputData');
-    
-            // Process the inputData and return a response
-            $resultArray = array(); // Initialize an empty array to store results
-
-            foreach ($inputData as $id) {
-                // Process each $id and obtain related details
-                $details = $this->Home_model->getDetailsById($id);
-                $image = $this->Home_model->getDetailsImageById($id);
-
-                // Create an array to hold the data for this iteration
-                $resultItem = array(
-                    'details' => $details,
-                    'image' => $image
-                );
-
-                // Add the result item to the result array
-                $resultArray[] = $resultItem;
+            // $filteredData = $this->input->post('filteredData');
+            // var_dump(empty($inputData));
+            if (is_array($inputData) && !empty($inputData))
+            { 
+                foreach ($inputData as $data) 
+                {
+                    $id = $data['id'];
+                    $distance = $data['distance'];
+                    //echo $id.'<br>';
+                                // Process each $id and obtain related details
+                                $details = $this->Home_model->getDetailsById($id);
+                                $image = $this->Home_model->getDetailsImageById($id);
+                    
+                                // Create an array to hold the data for this iteration
+                                $resultItem = array(
+                                    'details' => $details,
+                                    'image' => $image,
+                                    'distance' => $distance
+                                );
+                    
+                                // Add the result item to the result array
+                                $resultArray[] = $resultItem;
+                }
+                //var_dump( json_encode($resultItem));
+                header('Content-Type: application/json');
+                echo json_encode($resultArray);
+                
+            }   
+            else{
+                echo json_encode(['error' => 'Invalid input data']);
             }
-
-            // Return the result array as a JSON response
-            echo json_encode($resultArray);
-
+           
+            // die();
+            // Process the inputData and return a response
+            
+    
+            // if (is_array($inputData) && !empty($inputData)) {
+            //     foreach ($inputData as $id) {
+            //         // Process each $id and obtain related details
+            //         $details = $this->Home_model->getDetailsById($id);
+            //         $image = $this->Home_model->getDetailsImageById($id);
+        
+            //         // Create an array to hold the data for this iteration
+            //         $resultItem = array(
+            //             'details' => $details,
+            //             'image' => $image
+            //         );
+        
+            //         // Add the result item to the result array
+            //         $resultArray[] = $resultItem;
+            //     }
+    
+            //     // Return the result array as a JSON response
+            //     echo json_encode($resultArray);
+            // } else {
+            //     // Handle the case when $inputData is not an array or is empty
+            //     echo json_encode(['error' => 'Invalid input data']);
+            // }
         } else {
             // Handle non-AJAX requests here
-            // Redirect or display an error message
+            echo "Error: This is not an AJAX request.";
         }
     }
+    
 }
 ?>

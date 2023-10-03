@@ -143,6 +143,20 @@ class post_add_model extends CI_Model {
     }
 
 
+    public function addBookData($data)
+    {
+        // Insert the data into the 'bookings' table
+        $this->db->insert('tbl_submissions', $data);
+
+        // Check if the insertion was successful
+        if ($this->db->affected_rows() > 0) {
+            return true; // Insertion successful
+        } else {
+            return false; // Insertion failed
+        }
+    }
+
+
 
 }
 
