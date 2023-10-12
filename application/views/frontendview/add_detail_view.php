@@ -224,6 +224,7 @@
 
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <button type="submit" id="butregister" name="butregister" class="btn btn-primary green_btn" style="width: 100%; font-weight: 900; height: 55px;"><span class="align-middle">BOOK NOW</span></button>
+              <!-- Add_detail controller have function -->
             </div>
             </form>
             </div>

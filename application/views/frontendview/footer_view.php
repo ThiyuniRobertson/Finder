@@ -223,6 +223,10 @@
         var filteredData = new Array();
         var propertyarray = new Array();
         var locationScore;
+        var rCategoryScore;
+        var bedtypeScore;
+        var bathtypeScore;
+        var genderScore;
         function getData() {
             //   alert("Thiyuni");
             // Retrieve the user_latitude and user_longitude values
@@ -250,61 +254,61 @@
                 if(room_category != '')
                 {
                     if (room_category = 'One Person') { // distance less than 1km
-                        locationScore: 10;
+                        rCategoryScore: 10;
                     }
                     else if (room_category = 'Two Person') { // distance less than 1km
-                        locationScore: 10;
+                        rCategoryScore: 10;
                     }
                     else if (room_category = 'Three Person') { // distance less than 1km
-                        locationScore: 10;
+                        rCategoryScore: 10;
                     }
                     else if (room_category = 'More than three') { // distance less than 1km
-                        locationScore: 10;
+                        rCategoryScore: 10;
                     }
                     else{
-                        locationScore: 0;
+                        rCategoryScore: 0;
                     }
                 }
 
                 if(bed_type != '')
                 {
                     if (bed_type = 'Single') { // distance less than 1km
-                        locationScore: 10;
+                        bedtypeScore: 10;
                     }
                     else if (bed_type = 'Double') { // distance less than 1km
-                        locationScore: 10;
+                        bedtypeScore: 10;
                     }
                     else if (bed_type = 'Bunk Bed') { // distance less than 1km
-                        locationScore: 10;
+                        bedtypeScore: 10;
                     }
                     else{
-                        locationScore: 0;
+                        bedtypeScore: 0;
                     }
                 }
 
                 if(bathroom_type != '')
                 {
                     if (bathroom_type = 'Attached Bathroom') { // distance less than 1km
-                        locationScore: 10;
+                        bathtypeScore: 10;
                     }
                     else if (bathroom_type = 'Common Bathroom') { // distance less than 1km
-                        locationScore: 10;
+                        bathtypeScore: 10;
                     }
                     else{
-                        locationScore: 0;
+                        bathtypeScore: 0;
                     }
                 }
 
                 if(gender_type != '')
                 {
                     if (gender_type = 'Male') { // distance less than 1km
-                        locationScore: 10;
+                        genderScore: 10;
                     }
                     else if (gender_type = 'Female') { // distance less than 1km
-                        locationScore: 10;
+                        genderScore: 10;
                     }
                     else{
-                        locationScore: 0;
+                        genderScore: 0;
                     }
                 }
                 //  alert(destLat);
@@ -473,7 +477,7 @@
                             '<div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">' +
                             '<div class="rounded shadow p-4" style="background-color: #eeeeee;">' +
                             '<h1 class="sub_heading mb-3">' + details.vTopic + '</h1>' +
-                            '<p class="mb-1">Distance: ' + distance + '</p>' +
+                            // '<p class="mb-1">Distance: ' + distance + '</p>' +
                             '<p class="mb-1">Beds: ' + details.vBedType + '</p>' +
                             '<p class="mb-1">Baths: ' + details.vBathroom + '</p>' +
                             '<p class="mb-1">' + details.vFacility + '</p>' +
